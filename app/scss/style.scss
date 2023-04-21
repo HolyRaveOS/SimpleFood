@@ -5,7 +5,6 @@
 @import 'commons';
 @import 'media';
 
-//========================================================================
 
 .header {
 	padding: 60px 0;
@@ -15,7 +14,6 @@
 	left: 0;
 	z-index: 100;
 	background-color: rgba(249, 250, 255, 0.8);
-	// .header__menu
 
 	&__menu {
 		display: grid;
@@ -26,14 +24,10 @@
 		grid-template-columns: 61% auto auto;
 	}
 
-	// .header__list
-
 	&__list {
 		display: flex;
 		margin-right: 62px;
 	}
-
-	// .header__item
 
 	&__item {
 		&:not(:last-child) {
@@ -41,8 +35,6 @@
 		}
 
 	}
-
-	// .header__link
 
 	&__link {
 		border-radius: 5px;
@@ -68,13 +60,9 @@
 
 	}
 
-	// .header__user-list
-
 	&__user-list {
 		display: flex;
 	}
-
-	// .header__user-item
 
 	&__user-item {
 		position: relative;
@@ -84,8 +72,6 @@
 		}
 	}
 
-	// .header__user-link
-
 	&__user-link {
 		display: flex;
 		justify-content: center;
@@ -93,56 +79,60 @@
 		width: 44px;
 		height: 44px;
 		border-radius: 5px;
-		transition: background-color 0.3s, stroke 0.3s, color 0.3s;
+		transition: background-color 0.3s;
 
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: $orangeColor;
-
-				svg {
-					ellipse {
-						stroke: #FFFFFF;
-					}
-
-					path {
-						stroke: #FFFFFF;
-					}
-				}
-
-				span {
-					background-color: #fff;
-					color: $orangeColor;
-				}
-			}
+		.icon-cart {
+			fill: #FFFFFF;
+			stroke: #000000;
 		}
 
-		&:active {
-			background-color: #FFF2ED;
+		.header-icon {
+			width: 20px;
+			height: 20px;
+		}
+
+		&:hover {
+			background-color: $orangeColor;
+
+			.header-icon {
+				fill: #FFFFFF;
+			}
+
+			.icon-cart {
+				stroke: #FFFFFF;
+				fill: transparent;
+			}
+
+			.header__user-num {
+				background-color: #fff;
+				color: $orangeColor;
+			}
 		}
 
 		&:focus {
 			background-color: rgba(255, 104, 56, 0.1);
 			box-shadow: 0px 0px 0px 2px $orangelight;
 
-			svg {
-				ellipse {
-					stroke: #000000;
-				}
-
-				path {
-					stroke: #000000;
-				}
+			&:active {
+				background-color: #FFF2ED;
 			}
 
-			span {
+			.header-icon {
+				fill: #000000;
+			}
+
+			.icon-cart {
+				stroke: #000000;
+				fill: transparent;
+			}
+
+			.header__user-num {
 				background-color: $orangeColor;
 				color: #FFFFFF;
 			}
 		}
 
 	}
-
-	// .header__user-num
 
 	&__user-num {
 		position: absolute;
@@ -156,29 +146,17 @@
 		border-radius: 50%;
 		right: 3px;
 		top: 8px;
-
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: #fff;
-				color: $orangeColor;
-			}
-		}
+		transition: background-color 0.3s, color 0.3s;
 	}
 
 }
 
-//========================================================================
-
 .hero {
-
-	// .hero__inner
 
 	&__inner {
 		display: flex;
 		justify-content: space-between;
 	}
-
-	// .hero__content
 
 	&__content {
 		max-width: 500px;
@@ -187,17 +165,14 @@
 		flex-direction: column;
 	}
 
-	// .hero__title
-
 	&__title {
 		font-weight: 500;
 		font-size: 66px;
 		text-transform: uppercase;
 		margin-bottom: 20px;
 		line-height: 1;
+		color: $blueColor;
 	}
-
-	// .hero__downtitle
 
 	&__downtitle {
 		color: $orangeColor;
@@ -205,28 +180,20 @@
 		line-height: 1.5;
 	}
 
-	// .hero__text
-
 	&__text {
 		max-width: 450px;
 		margin-bottom: 20px;
 	}
 
-	// .hero__list
-
 	&__list {
 		display: flex;
 	}
-
-	// .hero__item
 
 	&__item {
 		&:not(:last-child) {
 			margin-right: 25px;
 		}
 	}
-
-	// .hero__link
 
 	&__link {
 		&--underline {
@@ -256,26 +223,19 @@
 	}
 }
 
-//========================================================================
-
 .popular {
 	text-align: center;
 	padding-bottom: 120px;
-	// .popular__title
 
 	&__title {
 		margin-bottom: 60px;
 	}
-
-	// .popular__filter
 
 	&__filter {
 		display: flex;
 		justify-content: center;
 		margin-bottom: 45px;
 	}
-
-	// .popular__filter-item
 
 	&__filter-item {
 		&:not(:last-child) {
@@ -309,11 +269,7 @@
 	}
 }
 
-//========================================================================
-
 .footer {
-
-	// .footer__inner
 
 	&__inner {
 		display: grid;
@@ -324,18 +280,10 @@
 		padding-bottom: 60px;
 	}
 
-	// .footer__form
-
-	&__form {}
-
-	// .footer__nav
-
 	&__nav {
 		display: flex;
 		justify-content: space-between;
 	}
-
-	// .footer__list
 
 	&__list {
 		&:not(:last-child) {
@@ -343,15 +291,11 @@
 		}
 	}
 
-	// .footer__item
-
 	&__item {
 		&:not(:last-child) {
 			margin-bottom: 14px;
 		}
 	}
-
-	// .footer__link
 
 	&__link {
 		font-size: 18px;
@@ -375,25 +319,17 @@
 		}
 	}
 
-	// .footer__contacts
-
 	&__contacts {
 		justify-self: center;
 	}
-
-	// .footer__contacts-list
 
 	&__contacts-list {
 		margin-bottom: 15px;
 	}
 
-	// .footer__contacts-item
-
 	&__contacts-item {
 		margin-bottom: 15px;
 	}
-
-	// .footer__contacts-link
 
 	&__contacts-link {
 		display: flex;
@@ -403,13 +339,16 @@
 		border-radius: 5px;
 		transition: box-shadow 0.3s, text-shadow 0.3s, color 0.3s;
 
-		svg {
+		.contacts-icon {
 			margin-right: 7px;
+			stroke-width: 0;
+			width: 24px;
+			height: 24px;
 
-			path {
-				transition: stroke 0.3s;
+			&--call {
+				fill: #FFFFFF;
+				stroke: #000000;
 			}
-
 		}
 
 		&:focus {
@@ -420,35 +359,30 @@
 			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
 		}
 
-		@media (any-hover: hover) {
-			&:hover {
-				color: $orangeColor;
+		&:hover {
+			color: $orangeColor;
 
-				svg {
-					path {
-						stroke: $orangeColor;
-					}
+			.contacts-icon {
+				stroke: $orangeColor;
+				fill: $orangeColor;
+
+				&--call {
+					fill: #FFFFFF;
 				}
 			}
 		}
 
 	}
 
-	// .footer__social-list
-
 	&__social-list {
 		display: flex;
 	}
-
-	// .footer__social-item
 
 	&__social-item {
 		&:not(:last-child) {
 			margin-right: 13px;
 		}
 	}
-
-	// .footer__social-link
 
 	&__social-link {
 		width: 39px;
@@ -460,43 +394,36 @@
 		justify-content: center;
 		transition: background-color 0.3s, box-shadow 0.3s;
 
+		.social-icon {
+			width: 20px;
+			height: 20px;
+		}
+
 		&:focus {
 			background-color: #FFF2ED;
 			box-shadow: 0px 0px 0px 2px $orangelight;
-		}
-
-		svg {
-			path {
-				transition: fill 0.3s;
-			}
 		}
 
 		@media (any-hover: hover) {
 			&:hover {
 				background-color: $orangeColor;
 
-				svg {
-					path {
-						fill: #FFFFFF;
-					}
+				.social-icon {
+					fill: #FFFFFF;
 				}
 			}
 
 			&:active {
-				svg {
-					path {
-						fill: $orangeColor;
-					}
-				}
-
 				background-color: #FFF2ED;
 				box-shadow: 0px 0px 0px 2px transparent;
+
+				.social-icon {
+					fill: $orangeColor;
+				}
 			}
 
 		}
 	}
-
-	// .footer__copy
 
 	&__copy {
 		background-color: $blueColor;
@@ -509,7 +436,6 @@
 }
 
 .input {
-	// .input__field
 
 	&__field {
 		padding: 13px 15px;
@@ -530,14 +456,3 @@
 	}
 
 }
-
-
-//========================================================================
-
-//========================================================================
-
-//========================================================================
-
-//========================================================================
-
-//========================================================================

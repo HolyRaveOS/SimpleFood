@@ -48,20 +48,14 @@
 		}
 	}
 
-	// .cards__img
-
 	&__img {
 		margin-bottom: 10px;
 	}
-
-	// .cards__text
 
 	&__text {
 		margin-bottom: 10px;
 		flex-grow: 1;
 	}
-
-	// .cards__price
 
 	&__price {
 		margin-bottom: 10px;
@@ -83,25 +77,13 @@
 	padding: 12px 32px;
 	transition: background-color 0.3s, box-shadow 0.3s, color 0.3s;
 
-	svg {
-		path {
-			transition: fill 0.3s ease 0s;
-		}
+	&:hover {
+		background-color: #ffffff;
+		color: $orangeColor;
+		box-shadow: 0px 0px 0px 2px $orangelight;
+
 	}
 
-	@media (any-hover: hover) {
-		&:hover {
-			background-color: #ffffff;
-			color: $orangeColor;
-			box-shadow: 0px 0px 0px 2px $orangelight;
-
-			svg {
-				path {
-					fill: $orangeColor;
-				}
-			}
-		}
-	}
 
 	&:focus {
 		box-shadow: 0px 0px 0px 2px $orangelight;
@@ -124,9 +106,18 @@
 		color: $blueColor;
 		transition: background-color 0.4s, color 0.4s;
 
-		@media (any-hover: hover) {
-			&:hover {
-				background-color: rgba(255, 104, 56, 0.1);
+		.popular-icon {
+			width: 44px;
+			height: 44px;
+			margin-right: 10px;
+			fill: #000000;
+		}
+
+		&:hover {
+			background-color: rgba(255, 104, 56, 0.1);
+
+			.popular-icon {
+				fill: $orangeColor;
 			}
 		}
 
@@ -138,35 +129,24 @@
 		&:active {
 			box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
 
-			svg {
-				path {
-					fill: #000000;
-				}
+			.popular-icon {
+				fill: #000000;
 			}
 		}
 
-		svg {
-			margin-right: 10px;
-		}
+		&.mixitup-control-active {
+			background-color: $orangeColor;
+			color: #FFFFFF;
 
+			.popular-icon {
+				fill: #FFFFFF;
+			}
+		}
 	}
 
 	&--small {
 		padding: 7px 14px;
 		font-size: 14px;
-	}
-
-	&.mixitup-control-active {
-		background-color: $orangeColor;
-		color: #FFFFFF;
-
-		svg {
-			path {
-				fill: #FFFFFF;
-			}
-		}
-
-		&:focus {}
 	}
 
 	&--long {
@@ -176,17 +156,25 @@
 		max-width: 200px;
 		font-size: 14px;
 
+		.form-icon {
+			width: 15px;
+			height: 14px;
+			margin-right: 20px;
+			fill: #ffffff;
+		}
+
 		&:focus {
-			svg {
-				path {
-					fill: $orangeColor;
-				}
+
+			.form-icon {
+				fill: $orangeColor;
 			}
 
 		}
 
-		svg {
-			margin-right: 20px;
+		&:hover {
+			.form-icon {
+				fill: $orangeColor;
+			}
 		}
 	}
 }
