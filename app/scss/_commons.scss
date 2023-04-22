@@ -1,6 +1,5 @@
 .logo {
 	height: 35px;
-	justify-self: start;
 	transition: box-shadow 0.3s, opacity 0.3s;
 	border-radius: 5px;
 	display: block;
@@ -9,10 +8,8 @@
 		box-shadow: 0px 0px 0px 2px $orangelight;
 	}
 
-	@media (any-hover: hover) {
-		&:hover {
-			opacity: 0.8;
-		}
+	&:hover {
+		opacity: 0.8;
 
 		&:active {
 			opacity: 0.5;
@@ -20,12 +17,45 @@
 	}
 }
 
-//================================================================
+.product-card {
+	display: flex;
+	flex-direction: column;
+	max-width: 210px;
+	align-items: center;
+	text-align: center;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 0px 1px #ECECEC;
+	border-radius: 5px;
+	font-size: 15px;
+	line-height: 1.2;
+	padding: 20px 15px;
+	transition: box-shadow 0.3s;
+	height: 100%;
 
-//========================================================================
+	&:hover {
+		box-shadow: 0px 0px 0px 1px $orangeColor;
+	}
+
+	&__img {
+		margin-bottom: 10px;
+	}
+
+	&__title {
+		margin-bottom: 10px;
+		flex-grow: 1;
+	}
+
+	&__price {
+		margin-bottom: 10px;
+		font-weight: 500;
+		line-height: 1.4;
+		color: $blueColor;
+	}
+
+}
 
 .btn {
-	background-color: #FF6838;
+	background-color: $orangeColor;
 	border-radius: 6px;
 	padding: 7px 14px;
 	font-size: 14px;
@@ -39,7 +69,6 @@
 		box-shadow: 0px 0px 0px 2px $orangelight;
 
 	}
-
 
 	&:focus {
 		box-shadow: 0px 0px 0px 2px $orangelight;
@@ -59,19 +88,9 @@
 
 }
 
-//========================================================================
-
 .title {
 	color: $blueColor;
 	font-weight: 500;
 	font-size: 36px;
 	line-height: 1.3;
 }
-
-//========================================================================
-
-//========================================================================
-
-//========================================================================
-
-//========================================================================
