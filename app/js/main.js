@@ -1,6 +1,16 @@
 
 $(function () {
 	var mixer = mixitup('.popular__list');
+
+	$(document).ready(function () {
+		$('.header__user-btn-cart').click(function () {
+			$('.header__cart-content').slideToggle('fast');
+			$('.header__cart-content').toggleClass('show');
+		});
+		$('.header__user-btn').click(function () {
+			$('.header__user-form').toggleClass('show');
+		});
+	});
 });
 
 

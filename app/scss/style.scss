@@ -38,6 +38,7 @@
 	}
 
 	&__item {
+
 		&:not(:last-child) {
 			margin-right: 40px;
 		}
@@ -55,12 +56,12 @@
 			box-shadow: 0px 0px 0px 2px $orangelight;
 		}
 
-		&:active {
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
-		}
-
 		&:hover {
 			color: $orangeColor;
+		}
+
+		&:active {
+			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
 		}
 	}
 
@@ -72,8 +73,13 @@
 		&:not(:last-child) {
 			margin-right: 10px;
 		}
+
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
 	}
 
+	&__user-btn-cart,
 	&__user-btn {
 		position: relative;
 		display: flex;
@@ -106,10 +112,6 @@
 			background-color: rgba(255, 104, 56, 0.1);
 			box-shadow: 0px 0px 0px 2px $orangelight;
 
-			&:active {
-				background-color: #FFF2ED;
-			}
-
 			.header__user-icon {
 				fill: #000000;
 			}
@@ -124,6 +126,44 @@
 				color: #FFFFFF;
 			}
 		}
+
+
+		&:active {
+			background-color: #FFF2ED;
+		}
+
+	}
+
+	&__user-form {
+		font-size: 16px;
+		display: none;
+		border: 1px solid $orangeColor;
+		border-radius: 5px;
+		height: 46px;
+		display: flex;
+		align-items: center;
+		margin-right: 10px;
+		display: none;
+
+		&.show {
+			display: flex;
+		}
+	}
+
+
+	&__user-input {
+		background-color: transparent;
+		max-width: 250px;
+		width: 100%;
+		padding: 0 10px;
+	}
+
+	&__user-search {
+
+		background-color: $orangeColor;
+		color: #ffffff;
+		height: 100%;
+		padding: 0 10px;
 	}
 
 	&__user-icon-cart {
@@ -145,10 +185,58 @@
 		top: 8px;
 		transition: background-color 0.3s, color 0.3s;
 	}
+
+	&__cart-content {
+		position: absolute;
+		max-width: 250px;
+		width: 100%;
+		top: 120px;
+		border: 3px solid $orangeColor;
+		border-radius: 15px;
+		padding: 10px;
+		background: #fffaf8;
+		font-size: 16px;
+		display: none;
+
+		&.show {
+			display: block;
+		}
+	}
+
+
+	&__cart-items {
+		li {
+			margin-bottom: 5px;
+		}
+	}
+
+	&__cart-links {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__cart-link {
+		border-radius: 5px;
+		width: fit-content;
+		padding: 10px 0;
+		transition: box-shadow 0.3s, color 0.3s, text-shadow 0.3s;
+		font-weight: 500;
+
+		&:focus {
+			box-shadow: 0 0 0 1px $orangeColor;
+		}
+
+		&:hover {
+			color: $orangeColor;
+		}
+
+		&:active {
+			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+		}
+	}
 }
 
 .hero {
-
 	&__container {
 		display: flex;
 		justify-content: space-between;
