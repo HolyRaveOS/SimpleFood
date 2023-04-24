@@ -7,8 +7,7 @@
 
 
 .header {
-	padding: 60px 0;
-	height: 159px;
+	padding: 58px 0;
 	position: fixed;
 	right: 0;
 	left: 0;
@@ -42,7 +41,6 @@
 		&:not(:last-child) {
 			margin-right: 40px;
 		}
-
 	}
 
 	&__link {
@@ -64,7 +62,6 @@
 		&:hover {
 			color: $orangeColor;
 		}
-
 	}
 
 	&__user-list {
@@ -72,14 +69,13 @@
 	}
 
 	&__user-item {
-		position: relative;
-
 		&:not(:last-child) {
 			margin-right: 10px;
 		}
 	}
 
 	&__user-btn {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -88,24 +84,14 @@
 		border-radius: 5px;
 		transition: background-color 0.3s;
 
-		.icon-cart {
-			fill: #FFFFFF;
-			stroke: #000000;
-		}
-
-		.header-icon {
-			width: 20px;
-			height: 20px;
-		}
-
 		&:hover {
 			background-color: $orangeColor;
 
-			.header-icon {
+			.header__user-icon {
 				fill: #FFFFFF;
 			}
 
-			.icon-cart {
+			.header__user-icon-cart {
 				stroke: #FFFFFF;
 				fill: transparent;
 			}
@@ -124,11 +110,11 @@
 				background-color: #FFF2ED;
 			}
 
-			.header-icon {
+			.header__user-icon {
 				fill: #000000;
 			}
 
-			.icon-cart {
+			.header__user-icon-cart {
 				stroke: #000000;
 				fill: transparent;
 			}
@@ -138,7 +124,11 @@
 				color: #FFFFFF;
 			}
 		}
+	}
 
+	&__user-icon-cart {
+		fill: #FFFFFF;
+		stroke: #000000;
 	}
 
 	&__user-num {
@@ -155,7 +145,6 @@
 		top: 8px;
 		transition: background-color 0.3s, color 0.3s;
 	}
-
 }
 
 .hero {
@@ -226,13 +215,11 @@
 			box-shadow: 0px 0px 0px 2px transparent;
 			color: $blueColor;
 		}
-
 	}
 }
 
 .popular {
 	text-align: center;
-	padding-bottom: 120px;
 
 	&__title {
 		margin-bottom: 60px;
@@ -255,19 +242,12 @@
 		color: $blueColor;
 		transition: background-color 0.4s, color 0.4s;
 
-		.popular-icon {
-			width: 44px;
-			height: 44px;
-			margin-right: 10px;
-			fill: #000000;
-		}
-
 		&:hover {
 			background-color: rgba(255, 104, 56, 0.1);
 			color: $orangeColor;
 			box-shadow: 0px 0px 0px 2px $orangelight;
 
-			.popular-icon {
+			.popular__icon {
 				fill: $orangeColor;
 			}
 		}
@@ -280,7 +260,7 @@
 		&:active {
 			box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
 
-			.popular-icon {
+			.popular__icon {
 				fill: #000000;
 			}
 		}
@@ -289,10 +269,15 @@
 			background-color: $orangeColor;
 			color: #FFFFFF;
 
-			.popular-icon {
+			.popular__icon {
 				fill: #FFFFFF;
 			}
 		}
+	}
+
+	&__icon {
+		margin-right: 10px;
+		fill: #000000;
 	}
 
 	&__filter-item {
@@ -336,64 +321,78 @@
 
 	&__container {
 		padding-bottom: 60px;
-		display: grid;
-		grid-template-columns: minmax(200px, 250px) 1.6fr 1fr;
-		gap: 20px;
+		display: flex;
+		justify-content: space-between;
 	}
 
 	&__row {
 		max-width: 200px;
+		width: 100%;
+		margin-right: 30px;
 	}
 
 	&__logo {
 		margin-bottom: 30px;
 	}
 
+	&__label {
+		margin-bottom: 12px;
+		display: block;
+	}
+
 	&__input {
 		padding: 11px 14px;
 		font-size: 14px;
-		margin-bottom: 12px;
 		border: 1px solid #C2C2C2;
 		border-radius: 5px;
 
 		&:focus {
-			box-shadow: 0px 0px 0px 2px $orangeColor;
-			border-color: transparent;
+			border: 1px solid $orangeColor;
 		}
 
 		&::placeholder {
 			color: $grayColor;
 			line-height: 1.3;
+			transition: color 0.3s;
+		}
+
+		&:hover::placeholder {
+			color: $blueColor;
 		}
 	}
 
 	&__btn {
-		padding: 13px 40px;
+		padding: 13px 0;
 		display: flex;
 		align-items: center;
-		max-width: 200px;
+		justify-content: center;
+		width: 100%;
 		font-size: 14px;
-
-		.form-icon {
-			width: 15px;
-			height: 14px;
-			margin-right: 20px;
-			fill: #ffffff;
-		}
 
 		&:focus {
 
-			.form-icon {
+			.footer__form-icon {
 				fill: $orangeColor;
 			}
 
 		}
 
 		&:hover {
-			.form-icon {
+			.footer__form-icon {
 				fill: $orangeColor;
 			}
 		}
+	}
+
+	&__form-icon {
+		margin-right: 20px;
+		fill: #ffffff;
+	}
+
+	&__nav {
+		max-width: 500px;
+		width: 100%;
+		margin-right: 30px;
 	}
 
 	&__list {
@@ -405,35 +404,36 @@
 	}
 
 	&__item {
-		line-height: 0;
-
 		&:not(:last-child) {
 			margin-bottom: 20px;
 		}
 	}
 
 	&__link {
+		line-height: 1.3;
 		font-size: 18px;
 		letter-spacing: 0.01em;
 		border-radius: 5px;
 		transition: box-shadow 0.3s, text-shadow 0.3s, color 0.3s;
-		line-height: 1.3;
+		display: block;
+		width: fit-content;
 
 		&:focus {
 			box-shadow: 0px 0px 0px 2px $orangelight;
 		}
 
-		&:active {
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
-		}
-
 		&:hover {
 			color: $orangeColor;
+		}
+
+		&:active {
+			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
 		}
 	}
 
 	&__contacts {
-		justify-self: center;
+		max-width: 262px;
+		width: 100%;
 	}
 
 	&__contacts-list {
@@ -452,18 +452,6 @@
 		border-radius: 5px;
 		transition: box-shadow 0.3s, text-shadow 0.3s, color 0.3s;
 
-		.contacts-icon {
-			margin-right: 7px;
-			stroke-width: 0;
-			width: 24px;
-			height: 24px;
-
-			&--call {
-				fill: #FFFFFF;
-				stroke: #000000;
-			}
-		}
-
 		&:focus {
 			box-shadow: 0px 0px 0px 2px $orangelight;
 		}
@@ -475,16 +463,15 @@
 		&:hover {
 			color: $orangeColor;
 
-			.contacts-icon {
+			.footer__contacts-icon {
 				stroke: $orangeColor;
 				fill: $orangeColor;
-
-				&--call {
-					fill: #FFFFFF;
-				}
 			}
 		}
+	}
 
+	&__contacts-icon {
+		margin-right: 7px;
 	}
 
 	&__social-list {
@@ -507,11 +494,6 @@
 		justify-content: center;
 		transition: background-color 0.3s, box-shadow 0.3s;
 
-		.social-icon {
-			width: 21px;
-			height: 21px;
-		}
-
 		&:focus {
 			background-color: #FFF2ED;
 			box-shadow: 0px 0px 0px 2px $orangelight;
@@ -520,7 +502,7 @@
 		&:hover {
 			background-color: $orangeColor;
 
-			.social-icon {
+			.footer__social-icon {
 				fill: #FFFFFF;
 			}
 		}
@@ -529,11 +511,10 @@
 			background-color: #FFF2ED;
 			box-shadow: 0px 0px 0px 2px transparent;
 
-			.social-icon {
+			.footer__social-icon {
 				fill: $orangeColor;
 			}
 		}
-
 	}
 
 	&__copy {
