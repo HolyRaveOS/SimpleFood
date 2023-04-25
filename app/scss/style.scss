@@ -154,9 +154,6 @@
 		display: flex;
 		align-items: center;
 		margin-right: 10px;
-
-
-		&.show {}
 	}
 
 	&__user-input {
@@ -364,6 +361,7 @@
 		&:active {
 			box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
 			background-color: #ffffff;
+			color: $blueColor;
 
 			.popular__icon {
 				fill: #000000;
