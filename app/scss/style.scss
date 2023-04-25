@@ -152,7 +152,7 @@
 		display: none;
 		border: 1px solid $orangeColor;
 		border-radius: 5px;
-		height: 46px;
+		height: 44px;
 		display: flex;
 		align-items: center;
 		margin-right: 10px;
@@ -176,6 +176,15 @@
 		color: #ffffff;
 		height: 100%;
 		padding: 0 10px;
+		transition: background-color 0.3s;
+
+		&:hover {
+			background-color: #ff4810;
+		}
+
+		&:active {
+			background-color: #c03105;
+		}
 	}
 
 	&__user-icon-cart {
