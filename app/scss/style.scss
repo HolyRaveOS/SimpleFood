@@ -62,6 +62,7 @@
 
 		&:active {
 			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+			color: $darkColor;
 		}
 	}
 
@@ -90,24 +91,6 @@
 		border-radius: 5px;
 		transition: background-color 0.3s;
 
-		&:hover {
-			background-color: $orangeColor;
-
-			.header__user-icon {
-				fill: #FFFFFF;
-			}
-
-			.header__user-icon-cart {
-				stroke: #FFFFFF;
-				fill: transparent;
-			}
-
-			.header__user-num {
-				background-color: #fff;
-				color: $orangeColor;
-			}
-		}
-
 		&:focus {
 			background-color: rgba(255, 104, 56, 0.1);
 			box-shadow: 0px 0px 0px 2px $orangelight;
@@ -127,9 +110,39 @@
 			}
 		}
 
+		&:hover {
+			background-color: $orangeColor;
+
+			.header__user-icon {
+				fill: #FFFFFF;
+			}
+
+			.header__user-icon-cart {
+				stroke: #FFFFFF;
+				fill: transparent;
+			}
+
+			.header__user-num {
+				background-color: #fff;
+				color: $orangeColor;
+			}
+		}
 
 		&:active {
 			background-color: #FFF2ED;
+
+			.header__user-num {
+				background-color: $orangeColor;
+				color: #ffffff;
+			}
+
+			.header__user-icon-cart {
+				stroke: #000000;
+			}
+
+			.header__user-icon {
+				fill: #000000;
+			}
 		}
 
 	}
@@ -149,7 +162,6 @@
 			display: flex;
 		}
 	}
-
 
 	&__user-input {
 		background-color: transparent;
@@ -202,7 +214,6 @@
 			display: block;
 		}
 	}
-
 
 	&__cart-items {
 		li {
@@ -288,13 +299,13 @@
 		border-radius: 5px;
 		transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s, text-decoration-color 0.3s;
 
-		&:hover {
-			color: $orangeColor;
+		&:focus {
+			box-shadow: 0px 0px 0px 2px $orangelight;
 			text-decoration-color: transparent;
 		}
 
-		&:focus {
-			box-shadow: 0px 0px 0px 2px $orangelight;
+		&:hover {
+			color: $orangeColor;
 			text-decoration-color: transparent;
 		}
 
@@ -330,6 +341,11 @@
 		color: $blueColor;
 		transition: background-color 0.4s, color 0.4s;
 
+		&:focus {
+			background-color: #ffffff;
+			color: $blueColor;
+		}
+
 		&:hover {
 			background-color: rgba(255, 104, 56, 0.1);
 			color: $orangeColor;
@@ -340,13 +356,9 @@
 			}
 		}
 
-		&:focus {
-			background-color: #ffffff;
-			color: $blueColor;
-		}
-
 		&:active {
 			box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
+			background-color: #ffffff;
 
 			.popular__icon {
 				fill: #000000;
@@ -386,14 +398,14 @@
 		color: $blueColor;
 		border-radius: 5px;
 		transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s, text-decoration-color 0.3s;
-
-		&:hover {
-			color: $orangeColor;
-			text-decoration-color: transparent;
-		}
+		padding: 2px 3px;
 
 		&:focus {
 			box-shadow: 0px 0px 0px 2px $orangelight;
+		}
+
+		&:hover {
+			color: $orangeColor;
 			text-decoration-color: transparent;
 		}
 
@@ -433,9 +445,10 @@
 		font-size: 14px;
 		border: 1px solid #C2C2C2;
 		border-radius: 5px;
+		transition: border-color 0.3s;
 
 		&:focus {
-			border: 1px solid $orangeColor;
+			border-color: $orangeColor;
 		}
 
 		&::placeholder {
@@ -516,6 +529,7 @@
 
 		&:active {
 			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+			color: $darkColor;
 		}
 	}
 
@@ -530,6 +544,7 @@
 
 	&__contacts-item {
 		margin-bottom: 15px;
+		width: fit-content;
 	}
 
 	&__contacts-link {
@@ -544,18 +559,23 @@
 			box-shadow: 0px 0px 0px 2px $orangelight;
 		}
 
-		&:active {
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
-		}
-
 		&:hover {
 			color: $orangeColor;
 
 			.footer__contacts-icon {
-				stroke: $orangeColor;
 				fill: $orangeColor;
 			}
 		}
+
+		&:active {
+			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+			color: $darkColor;
+
+			.footer__contacts-icon {
+				fill: #000000;
+			}
+		}
+
 	}
 
 	&__contacts-icon {
