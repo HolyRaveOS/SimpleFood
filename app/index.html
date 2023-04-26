@@ -36,16 +36,8 @@
 						</li>
 					</ul>
 				</nav>
-				<ul class="header__user-list">
-					<li class="header__user-item">
-						<form class="header__user-form">
-							<label class="header__user-label">
-								<input class="header__user-input" type="text" placeholder="Пошук" required>
-							</label>
-							<button class="header__user-search" type="submit">
-								Знайти
-							</button>
-						</form>
+				<div class="header__user-items">
+					<div class="header__user-item">
 						<button class="header__user-btn" type="button">
 							<span class="visually-hidden">
 								Кнопка пошуку
@@ -54,8 +46,17 @@
 								<use href="./images/icon/symbol-defs.svg#icon-icon-search"></use>
 							</svg>
 						</button>
-					</li>
-					<li class="header__user-item">
+						<form class="header__user-form">
+							<label class="header__user-label">
+								<spna class="visually-hidden">Пошук</spna>
+								<input class="header__user-input" type="search" placeholder="Пошук" required>
+							</label>
+							<button class="header__user-search" type="submit">
+								Знайти
+							</button>
+						</form>
+					</div>
+					<div class="header__user-item">
 						<button class="header__user-btn-cart" type="button">
 							<span class="visually-hidden">
 								Корзина
@@ -69,22 +70,47 @@
 						</button>
 						<div class="header__cart-content">
 							<ul class="header__cart-items">
-								<li>Product 1 - $19.99</li>
-								<li>Product 2 - $24.99</li>
-								<li>Product 3 - $14.99</li>
-								<li>Product 4 - $34.99</li>
+								<li>
+									<span class="header__cart-product">
+										Product 1
+									</span> -
+									<span class="header__cart-price">
+										$19.99
+									</span>
+								</li>
+								<li>
+									<span class="header__cart-product">
+										Product 1
+									</span> -
+									<span class="header__cart-price">
+										$24.99
+									</span>
+								</li>
+								<li>
+									<span class="header__cart-product">
+										Product 1
+									</span> -
+									<span class="header__cart-price">
+										$14.99
+									</span>
+								</li>
+								<li>
+									<span class="header__cart-product">
+										Product 1
+									</span> -
+									<span class="header__cart-price">
+										$34.99
+									</span>
+								</li>
 							</ul>
 							<div class="header__cart-total">
 								<span>Загальна вартість:</span>
 								<span class="header__total-price">$95.96</span>
 							</div>
-							<div class="header__cart-links">
-								<a href="#" class="header__cart-link">Переглянути корзину</a>
-								<a href="#" class="header__cart-link">Оформити замовлення</a>
-							</div>
+							<a href="#" class="header__cart-link">Оформити замовлення</a>
 						</div>
-					</li>
-				</ul>
+					</div>
+				</div>
 			</div>
 		</header>
 
@@ -372,6 +398,293 @@
 					<a class="popular__link" href="#">
 						Показати ще
 					</a>
+				</div>
+			</section>
+			<section class="stay section">
+				<div class="container stay__container">
+					<div class="stay__image-block" style="background-image: url(./images/food-delivery.png);">
+					</div>
+					<div class="stay__content">
+						<h2 class="stay__title title">
+							Залишайтеся вдома, а ми
+							потурбуємося про їжу
+						</h2>
+						<p class="stay__text">
+							У нас є смачна їжа і ми готові доставити її до вас додому! Скористайтеся нашою доставкою прямо
+							зараз та отримайте знижку!
+						</p>
+						<ul class="stay__list">
+							<li class="stay__item">
+								<svg class="stay__icon stay__icon--timer" width="34" height="34">
+									<use href="./images/icon/symbol-defs.svg#icon-icon-timer"></use>
+								</svg>
+								Швидка доставка за 15 хвилин
+							</li>
+							<li class="stay__item">
+								<svg class="stay__icon stay__icon--delivery" width="34" height="34">
+									<use href="./images/icon/symbol-defs.svg#icon-icon-delivery"></use>
+								</svg>
+								Чемні кур’єри
+							</li>
+							<li class="stay__item">
+								<svg class="stay__icon stay__icon--restorant" width="34" height="34">
+									<use href="./images/icon/symbol-defs.svg#icon-icon-restorant"></use>
+								</svg>
+								Більше 500 закладів
+							</li>
+						</ul>
+						<a class="btn btn--big" href="#">
+							Детальніше
+						</a>
+					</div>
+				</div>
+			</section>
+			<section class="restaurants section">
+				<div class="container">
+					<h2 class="restaurants__title title">
+						Найкращі ресторани
+					</h2>
+					<div class="restaurants__slider swiper">
+						<div class="restaurants__wrapper swiper-wrapper">
+							<div class="restaurants__slide swiper-slide">
+								<a class="restaurants__slide-image" href="#">
+									<img src="./images/restaurants/1.jpg" alt="Blaze Pizza" width="370" height="300">
+								</a>
+								<div class="restaurants__slide-box">
+									<h3 class="restaurants__slide-title">Blaze Pizza</h3>
+									<div class="restaurants__slide-info">
+										<p class="restaurants__slide-time">
+											9:00-22:00
+										</p>
+										<a class="restaurants__slide-link" href="#">
+											<svg class="restaurants__slide-icon" width="14" height="13">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="restaurants__slide swiper-slide">
+								<a class="restaurants__slide-image" href="#">
+									<img src="./images/restaurants/2.jpg" alt="Pizza Runcho" width="370" height="300">
+								</a>
+								<div class="restaurants__slide-box">
+									<h3 class="restaurants__slide-title">Pizza Runcho</h3>
+									<div class="restaurants__slide-info">
+										<p class="restaurants__slide-time">
+											9:00-22:00
+										</p>
+										<a class="restaurants__slide-link" href="#">
+											<svg class="restaurants__slide-icon" width="14" height="13">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="restaurants__slide swiper-slide">
+								<a class="restaurants__slide-image" href="#">
+									<img src="./images/restaurants/3.jpg" alt="Pizza Hut" width="370" height="300">
+								</a>
+								<div class="restaurants__slide-box">
+									<h3 class="restaurants__slide-title">Pizza Hut</h3>
+									<div class="restaurants__slide-info">
+										<p class="restaurants__slide-time">
+											9:00-22:00
+										</p>
+										<a class="restaurants__slide-link" href="#">
+											<svg class="restaurants__slide-icon" width="14" height="13">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="restaurants__slide swiper-slide">
+								<a class="restaurants__slide-image" href="#">
+									<img src="./images/restaurants/4.jpg" alt="McDonald`s" width="370" height="300">
+								</a>
+								<div class="restaurants__slide-box">
+									<h3 class="restaurants__slide-title">McDonald`s</h3>
+									<div class="restaurants__slide-info">
+										<p class="restaurants__slide-time">
+											9:00-22:00
+										</p>
+										<a class="restaurants__slide-link" href="#">
+											<svg class="restaurants__slide-icon" width="14" height="13">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="restaurants__slide swiper-slide">
+								<a class="restaurants__slide-image" href="#">
+									<img src="./images/restaurants/5.jpg" alt="KFC" width="370" height="300">
+								</a>
+								<div class="restaurants__slide-box">
+									<h3 class="restaurants__slide-title">KFC</h3>
+									<div class="restaurants__slide-info">
+										<p class="restaurants__slide-time">
+											9:00-22:00
+										</p>
+										<a class="restaurants__slide-link" href="#">
+											<svg class="restaurants__slide-icon" width="14" height="13">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+							<div class="restaurants__slide swiper-slide">
+								<a class="restaurants__slide-image" href="#">
+									<img src="./images/restaurants/6.jpg" alt="Star Burgers" width="370" height="300">
+								</a>
+								<div class="restaurants__slide-box">
+									<h3 class="restaurants__slide-title">Star Burgers</h3>
+									<div class="restaurants__slide-info">
+										<p class="restaurants__slide-time">
+											9:00-22:00
+										</p>
+										<a class="restaurants__slide-link" href="#">
+											<svg class="restaurants__slide-icon" width="14" height="13">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+											</svg>
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="restaurants__pagination"></div>
+					</div>
+				</div>
+			</section>
+			<section class="reviews section">
+				<div class="container">
+					<h2 class="reviews__title title">
+						Відгуки клієнтів
+					</h2>
+					<div class="reviews__slider swiper">
+						<div class="reviews__wrapper swiper-wrapper">
+							<blockquote class="reviews__slide swiper-slide">
+								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
+								<div class="reviews__info">
+									<p class="reviews__text">
+										SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний
+										сайт та
+										застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції
+										та дарує
+										знижки на доставку - однозначно рекомендую!
+									</p>
+									<cite class="reviews__autor">
+										<span class="reviews__autor-name">
+											Дарина
+										</span>
+										<span class="reviews__autor-info">
+											Поціновувачка смачної їжі
+										</span>
+									</cite>
+								</div>
+							</blockquote>
+							<blockquote class="reviews__slide swiper-slide">
+								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
+								<div class="reviews__info">
+									<p class="reviews__text">
+										SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний
+										сайт та
+										застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції
+										та дарує
+										знижки на доставку - однозначно рекомендую!
+									</p>
+									<cite class="reviews__autor">
+										<span class="reviews__autor-name">
+											Дарина
+										</span>
+										<span class="reviews__autor-info">
+											Поціновувачка смачної їжі
+										</span>
+									</cite>
+								</div>
+							</blockquote>
+							<blockquote class="reviews__slide swiper-slide">
+								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
+								<div class="reviews__info">
+									<p class="reviews__text">
+										SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний
+										сайт та
+										застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції
+										та дарує
+										знижки на доставку - однозначно рекомендую!
+									</p>
+									<cite class="reviews__autor">
+										<span class="reviews__autor-name">
+											Дарина
+										</span>
+										<span class="reviews__autor-info">
+											Поціновувачка смачної їжі
+										</span>
+									</cite>
+								</div>
+							</blockquote>
+							<blockquote class="reviews__slide swiper-slide">
+								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
+								<div class="reviews__info">
+									<p class="reviews__text">
+										SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний
+										сайт та
+										застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції
+										та дарує
+										знижки на доставку - однозначно рекомендую!
+									</p>
+									<cite class="reviews__autor">
+										<span class="reviews__autor-name">
+											Дарина
+										</span>
+										<span class="reviews__autor-info">
+											Поціновувачка смачної їжі
+										</span>
+									</cite>
+								</div>
+							</blockquote>
+						</div>
+						<div class="reviews__navigation">
+							<div class="reviews__arrow-left">
+								<svg class="reviews__icon" width="11" height="18">
+									<use href="./images/icon/symbol-defs.svg#icon-icon-chevron-left"></use>
+								</svg>
+							</div>
+							<div class="reviews__pagination"></div>
+							<div class="reviews__arrow-right">
+								<svg class="reviews__icon" width="11" height="18">
+									<use href="./images/icon/symbol-defs.svg#icon-icon-chevron-right"></use>
+								</svg>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="app section">
+				<div class="container app__container">
+					<div class="app__content">
+						<h2 class="app__title title">
+							Завантажте мобільний
+							застосунок
+						</h2>
+						<p class="app__text">
+							Ресторани, які ви любите - у ваших руках. Встановлюйте застосунок та замовляйте їжу в зручному
+							місці в зручний час
+						</p>
+						<div class="app__links">
+							<a class="app__link" href="#">
+								<img class="app__link-img" src="./images/app-store.svg" width="120" height="40" alt="App Store">
+							</a>
+							<a class="app__link" href="#">
+								<img class="app__link-img" src="./images/play-store.svg" width="135" height="40"
+									alt="Googlr Play">
+							</a>
+						</div>
+					</div>
+					<img class="app__img" src="./images/get-app.jpg" width="570" height="380" alt="Мобільний застосунок">
 				</div>
 			</section>
 		</main>
