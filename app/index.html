@@ -48,7 +48,7 @@
 						</button>
 						<form class="header__user-form">
 							<label class="header__user-label">
-								<spna class="visually-hidden">Пошук</spna>
+								<span class="visually-hidden">Пошук</span>
 								<input class="header__user-input" type="search" placeholder="Пошук" required>
 							</label>
 							<button class="header__user-search" type="submit">
@@ -376,7 +376,7 @@
 						<li class="popular__list-item mix category-d">
 							<article class="product-card">
 								<a class="product-card__link" href="#">
-									<img class="product-card__img" src="./images/popular/5.jpg" пalt="Чізбургер з листям салату"
+									<img class="product-card__img" src="./images/popular/5.jpg" alt="Чізбургер з листям салату"
 										width="140" height="140">
 									<h3 class="product-card__title">
 										Чізбургер з листям салату
@@ -401,9 +401,7 @@
 				</div>
 			</section>
 			<section class="stay section">
-				<div class="container stay__container">
-					<div class="stay__image-block" style="background-image: url(./images/food-delivery.png);">
-					</div>
+				<div class="container stay__container" style="background-image: url(./images/food-delivery.png);">
 					<div class="stay__content">
 						<h2 class="stay__title title">
 							Залишайтеся вдома, а ми
@@ -445,116 +443,122 @@
 						Найкращі ресторани
 					</h2>
 					<div class="restaurants__slider swiper">
-						<div class="restaurants__wrapper swiper-wrapper">
-							<div class="restaurants__slide swiper-slide">
-								<a class="restaurants__slide-image" href="#">
-									<img src="./images/restaurants/1.jpg" alt="Blaze Pizza" width="370" height="300">
+						<ul class="restaurants__list swiper-wrapper">
+							<li class="restaurants__item swiper-slide">
+								<a class="restaurants__item-image" href="#">
+									<img class="restaurants__item-img" src="./images/restaurants/1.jpg" alt="Blaze Pizza"
+										width="370" height="300">
 								</a>
-								<div class="restaurants__slide-box">
-									<h3 class="restaurants__slide-title">Blaze Pizza</h3>
-									<div class="restaurants__slide-info">
-										<p class="restaurants__slide-time">
+								<div class="restaurants__item-box">
+									<h3 class="restaurants__item-title">Blaze Pizza</h3>
+									<div class="restaurants__item-info">
+										<p class="restaurants__item-time">
 											9:00-22:00
 										</p>
-										<a class="restaurants__slide-link" href="#">
-											<svg class="restaurants__slide-icon" width="14" height="13">
+										<a class="restaurants__item-link" href="#">
+											<svg class="restaurants__item-icon" width="14" height="13">
 												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
 											</svg>
 										</a>
 									</div>
 								</div>
-							</div>
-							<div class="restaurants__slide swiper-slide">
-								<a class="restaurants__slide-image" href="#">
-									<img src="./images/restaurants/2.jpg" alt="Pizza Runcho" width="370" height="300">
+							</li>
+							<li class="restaurants__item swiper-slide">
+								<a class="restaurants__item-image" href="#">
+									<img class="restaurants__item-img" src="./images/restaurants/2.jpg" alt="Pizza Runcho"
+										width="370" height="300">
 								</a>
-								<div class="restaurants__slide-box">
-									<h3 class="restaurants__slide-title">Pizza Runcho</h3>
-									<div class="restaurants__slide-info">
-										<p class="restaurants__slide-time">
+								<div class="restaurants__item-box">
+									<h3 class="restaurants__item-title">Pizza Runcho</h3>
+									<div class="restaurants__item-info">
+										<p class="restaurants__item-time">
 											9:00-22:00
 										</p>
-										<a class="restaurants__slide-link" href="#">
-											<svg class="restaurants__slide-icon" width="14" height="13">
+										<a class="restaurants__item-link" href="#">
+											<svg class="restaurants__item-icon" width="14" height="13">
 												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
 											</svg>
 										</a>
 									</div>
 								</div>
-							</div>
-							<div class="restaurants__slide swiper-slide">
-								<a class="restaurants__slide-image" href="#">
-									<img src="./images/restaurants/3.jpg" alt="Pizza Hut" width="370" height="300">
+							</li>
+							<li class="restaurants__item swiper-slide">
+								<a class="restaurants__item-image" href="#">
+									<img class="restaurants__item-img" src="./images/restaurants/3.jpg" alt="Pizza Hut"
+										width="370" height="300">
 								</a>
-								<div class="restaurants__slide-box">
-									<h3 class="restaurants__slide-title">Pizza Hut</h3>
-									<div class="restaurants__slide-info">
-										<p class="restaurants__slide-time">
+								<div class="restaurants__item-box">
+									<h3 class="restaurants__item-title">Pizza Hut</h3>
+									<div class="restaurants__item-info">
+										<p class="restaurants__item-time">
 											9:00-22:00
 										</p>
-										<a class="restaurants__slide-link" href="#">
-											<svg class="restaurants__slide-icon" width="14" height="13">
+										<a class="restaurants__item-link" href="#">
+											<svg class="restaurants__item-icon" width="14" height="13">
 												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
 											</svg>
 										</a>
 									</div>
 								</div>
-							</div>
-							<div class="restaurants__slide swiper-slide">
-								<a class="restaurants__slide-image" href="#">
-									<img src="./images/restaurants/4.jpg" alt="McDonald`s" width="370" height="300">
+							</li>
+							<li class="restaurants__item swiper-slide">
+								<a class="restaurants__item-image" href="#">
+									<img class="restaurants__item-img" src="./images/restaurants/4.jpg" alt="McDonald`s"
+										width="370" height="300">
 								</a>
-								<div class="restaurants__slide-box">
-									<h3 class="restaurants__slide-title">McDonald`s</h3>
-									<div class="restaurants__slide-info">
-										<p class="restaurants__slide-time">
+								<div class="restaurants__item-box">
+									<h3 class="restaurants__item-title">McDonald`s</h3>
+									<div class="restaurants__item-info">
+										<p class="restaurants__item-time">
 											9:00-22:00
 										</p>
-										<a class="restaurants__slide-link" href="#">
-											<svg class="restaurants__slide-icon" width="14" height="13">
+										<a class="restaurants__item-link" href="#">
+											<svg class="restaurants__item-icon" width="14" height="13">
 												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
 											</svg>
 										</a>
 									</div>
 								</div>
-							</div>
-							<div class="restaurants__slide swiper-slide">
-								<a class="restaurants__slide-image" href="#">
-									<img src="./images/restaurants/5.jpg" alt="KFC" width="370" height="300">
+							</li>
+							<li class="restaurants__item swiper-slide">
+								<a class="restaurants__item-image" href="#">
+									<img class="restaurants__item-img" src="./images/restaurants/5.jpg" alt="KFC" width="370"
+										height="300">
 								</a>
-								<div class="restaurants__slide-box">
-									<h3 class="restaurants__slide-title">KFC</h3>
-									<div class="restaurants__slide-info">
-										<p class="restaurants__slide-time">
+								<div class="restaurants__item-box">
+									<h3 class="restaurants__item-title">KFC</h3>
+									<div class="restaurants__item-info">
+										<p class="restaurants__item-time">
 											9:00-22:00
 										</p>
-										<a class="restaurants__slide-link" href="#">
-											<svg class="restaurants__slide-icon" width="14" height="13">
+										<a class="restaurants__item-link" href="#">
+											<svg class="restaurants__item-icon" width="14" height="13">
 												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
 											</svg>
 										</a>
 									</div>
 								</div>
-							</div>
-							<div class="restaurants__slide swiper-slide">
-								<a class="restaurants__slide-image" href="#">
-									<img src="./images/restaurants/6.jpg" alt="Star Burgers" width="370" height="300">
+							</li>
+							<li class="restaurants__item swiper-slide">
+								<a class="restaurants__item-image" href="#">
+									<img class="restaurants__item-img" src="./images/restaurants/6.jpg" alt="Star Burgers"
+										width="370" height="300">
 								</a>
-								<div class="restaurants__slide-box">
-									<h3 class="restaurants__slide-title">Star Burgers</h3>
-									<div class="restaurants__slide-info">
-										<p class="restaurants__slide-time">
+								<div class="restaurants__item-box">
+									<h3 class="restaurants__item-title">Star Burgers</h3>
+									<div class="restaurants__item-info">
+										<p class="restaurants__item-time">
 											9:00-22:00
 										</p>
-										<a class="restaurants__slide-link" href="#">
-											<svg class="restaurants__slide-icon" width="14" height="13">
+										<a class="restaurants__item-link" href="#">
+											<svg class="restaurants__item-icon" width="14" height="13">
 												<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
 											</svg>
 										</a>
 									</div>
 								</div>
-							</div>
-						</div>
+							</li>
+						</ul>
 						<div class="restaurants__pagination"></div>
 					</div>
 				</div>
@@ -566,7 +570,28 @@
 					</h2>
 					<div class="reviews__slider swiper">
 						<div class="reviews__wrapper swiper-wrapper">
-							<blockquote class="reviews__slide swiper-slide">
+							<blockquote class="reviews__blockquote swiper-slide">
+								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини" width="300"
+									height="300">
+								<div class="reviews__info">
+									<p class="reviews__text">
+										SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний
+										сайт та
+										застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції
+										та дарує
+										знижки на доставку - однозначно рекомендую!
+									</p>
+									<cite class="reviews__autor">
+										<span class="reviews__autor-name">
+											Дарина
+										</span>
+										<span class="reviews__autor-info">
+											Поціновувачка смачної їжі
+										</span>
+									</cite>
+								</div>
+							</blockquote>
+							<blockquote class="reviews__blockquote swiper-slide">
 								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
 								<div class="reviews__info">
 									<p class="reviews__text">
@@ -586,7 +611,7 @@
 									</cite>
 								</div>
 							</blockquote>
-							<blockquote class="reviews__slide swiper-slide">
+							<blockquote class="reviews__blockquote swiper-slide">
 								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
 								<div class="reviews__info">
 									<p class="reviews__text">
@@ -606,27 +631,7 @@
 									</cite>
 								</div>
 							</blockquote>
-							<blockquote class="reviews__slide swiper-slide">
-								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
-								<div class="reviews__info">
-									<p class="reviews__text">
-										SimpleFood - одна з найкращих служб доставки продуктів з ресторанів у місті. Дуже зручний
-										сайт та
-										застосунок. Їхні доставники дуже ввічливі та пунктуальні. Компанія часто проводить акції
-										та дарує
-										знижки на доставку - однозначно рекомендую!
-									</p>
-									<cite class="reviews__autor">
-										<span class="reviews__autor-name">
-											Дарина
-										</span>
-										<span class="reviews__autor-info">
-											Поціновувачка смачної їжі
-										</span>
-									</cite>
-								</div>
-							</blockquote>
-							<blockquote class="reviews__slide swiper-slide">
+							<blockquote class="reviews__blockquote swiper-slide">
 								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
 								<div class="reviews__info">
 									<p class="reviews__text">

@@ -296,6 +296,7 @@
 
 	&__list {
 		display: flex;
+		align-items: center;
 	}
 
 	&__item {
@@ -430,24 +431,18 @@
 
 .stay {
 	&__container {
-		max-width: 1060px;
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
-	}
-
-	&__image-block {
+		justify-content: flex-end;
+		max-width: 1060px;
 		background-repeat: no-repeat;
-		background-position: center;
+		background-position: left center;
 		background-size: contain;
-		width: 440px;
-		height: 585px;
-		margin-right: 30px;
 	}
 
 	&__content {
-		max-width: 470px;
+		max-width: 480px;
 		width: 100%;
+		padding: 58px 0;
 	}
 
 	&__title {
@@ -507,36 +502,48 @@
 		padding: 5px;
 	}
 
-	&__wrapper {
+	&__list {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
 		gap: 30px;
 	}
 
-	&__slide {
+	&__item {
 		box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.1);
 		border-radius: 10px;
 		max-width: 370px;
 		width: 100%;
+		transition: box-shadow 0.3s;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		&:hover {
+			box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
+		}
 	}
 
-	&__slide-box {
+	&__item-img {
+		object-fit: contain;
+	}
+
+	&__item-box {
 		padding: 15px 20px 20px 20px;
 	}
 
-	&__slide-title {
+	&__item-title {
 		margin-bottom: 20px;
 		font-size: 24px;
 		line-height: 1.3;
 	}
 
-	&__slide-info {
+	&__item-info {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 	}
 
-	&__slide-time {
+	&__item-time {
 		font-size: 18px;
 		line-height: 1.66;
 		opacity: 0.9;
@@ -556,7 +563,7 @@
 		}
 	}
 
-	&__slide-link {
+	&__item-link {
 		background-color: $orangeColor;
 		padding: 1px 32px;
 		border-radius: 20px;
@@ -566,7 +573,7 @@
 			background-color: #FFF2ED;
 			box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
 
-			.restaurants__slide-icon {
+			.restaurants__item-icon {
 				fill: $orangeColor;
 			}
 		}
@@ -575,7 +582,7 @@
 			background-color: #fff;
 			box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
 
-			.restaurants__slide-icon {
+			.restaurants__item-icon {
 				fill: $orangeColor;
 				transform: translateX(150%);
 			}
@@ -585,13 +592,13 @@
 			background-color: #FFF2ED;
 			box-shadow: none;
 
-			.restaurants__slide-icon {
+			.restaurants__item-icon {
 				transform: translateX(0);
 			}
 		}
 	}
 
-	&__slide-icon {
+	&__item-icon {
 		fill: #fff;
 		transition: transform 0.3s ease 0s;
 	}
@@ -608,9 +615,7 @@
 		max-width: 990px;
 	}
 
-	&__wrapper {}
-
-	&__slide {
+	&__blockquote {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -620,6 +625,7 @@
 	&__img {
 		border-radius: 50%;
 		margin-right: 30px;
+		object-fit: contain;
 	}
 
 	&__info {
@@ -765,6 +771,7 @@
 	&__content {
 		max-width: 470px;
 		width: 100%;
+		margin-right: 30px;
 	}
 
 	&__title {
@@ -784,6 +791,10 @@
 		&:not(:last-child) {
 			margin-right: 30px;
 		}
+	}
+
+	&__img {
+		object-fit: contain;
 	}
 }
 
@@ -867,7 +878,6 @@
 
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
 		grid-template-rows: repeat(4, 1fr);
 		grid-auto-flow: column;
 		column-gap: 25px;
