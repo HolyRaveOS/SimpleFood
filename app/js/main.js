@@ -1,10 +1,49 @@
 
 $(function () {
+
+
+	$(window).resize(function () {
+		if ($(window).width() < 800) {
+			$(".restaurants__wrapper").addClass("swiper");
+		} else {
+			$(".restaurants__wrapper").removeClass("swiper");
+		}
+	});
+
+	$(document).ready(function () {
+		var mySwiper = null;
+
+		function initSwiper() {
+			if ($(window).width() <= 800) {
+				if (!mySwiper) {
+					mySwiper = new Swiper('.restaurants__wrapper', {
+						loop: true,
+						pagination: {
+							el: '.restaurants__pagination',
+							clickable: true,
+						},
+					});
+				}
+			} else {
+				if (mySwiper) {
+					mySwiper.destroy();
+					mySwiper = null;
+				}
+			}
+		}
+
+		initSwiper();
+
+		$(window).resize(function () {
+			initSwiper();
+		});
+	});
+
 	var mixer = mixitup('.popular__list');
 	$(document).ready(function () {
 		$('.header__user-form').hide();
 		$('.header__user-btn-cart').click(function () {
-			$('.header__cart-content').slideToggle('fast');
+			$('.header__cart').slideToggle('fast');
 		});
 		$('.header__user-form').css('display', 'flex').hide();
 		$('.header__user-btn').click(function () {
@@ -13,57 +52,9 @@ $(function () {
 	});
 
 
-	$(document).ready(function () {
-
-		const swiper = new Swiper('.restaurants__slider', {
-			loop: true,
-			pagination: {
-				el: '.restaurants__pagination',
-				clickable: true,
-			},
-			breakpoints: {
-				992: {
-
-				},
-			}
-		});
-		if (window.innerWidth > 992) {
-			swiper.destroy();
-		}
-	});
 
 	$(document).ready(function () {
-		var $window = $(window);
-		var $swiperContainer = $('.restaurants__slider');
-		var swiper;
-
-		function initSwiper() {
-			swiper = new Swiper($swiperContainer, {
-			});
-		}
-
-		function disableSwiper() {
-			if (swiper) {
-				swiper.destroy();
-				swiper = undefined;
-			}
-		}
-		function checkWindowSize() {
-			if ($window.width() <= 992) {
-				if (!swiper) {
-					initSwiper();
-				}
-			} else {
-				disableSwiper();
-			}
-		}
-
-		checkWindowSize();
-		$window.on('resize', checkWindowSize);
-	});
-
-	$(document).ready(function () {
-		const swiper2 = new Swiper('.reviews__slider', {
+		const swiper2 = new Swiper('.reviews__content', {
 			loop: true,
 			effect: 'flip',
 			autoplay: {
