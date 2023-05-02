@@ -141,7 +141,7 @@
 		}
 	}
 
-	&__user-form {
+	&__search-form {
 		font-size: 16px;
 		border: 1px solid $orangeColor;
 		border-radius: 5px;
@@ -220,10 +220,8 @@
 		}
 	}
 
-	&__cart-items {
-		li {
-			margin-bottom: 5px;
-		}
+	&__cart-item {
+		margin-bottom: 5px;
 	}
 
 	&__cart-total {

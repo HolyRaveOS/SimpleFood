@@ -46,7 +46,7 @@
 								<use href="./images/icon/symbol-defs.svg#icon-icon-search"></use>
 							</svg>
 						</button>
-						<form class="header__user-form">
+						<form class="header__search-form">
 							<label class="header__user-label">
 								<span class="visually-hidden">Пошук</span>
 								<input class="header__user-input" type="search" placeholder="Пошук" required name="q">
@@ -69,43 +69,47 @@
 							</span>
 						</button>
 						<div class="header__cart">
-							<ul class="header__cart-items">
-								<li class="header__cart-list">
-									<span class="header__cart-product">
+							<ul class="header__cart-list">
+								<li class="header__cart-item">
+									<span class="header__product-name">
 										Product 1
 									</span> -
 									<span class="header__cart-price">
-										<span class="header__cart-currency">$</span>19.99
+										<span class="currency">₴</span>
+										19.99
 									</span>
 								</li>
-								<li class="header__cart-list">
-									<span class="header__cart-product">
+								<li class="header__cart-item">
+									<span class="header__product-name">
 										Product 1
 									</span> -
 									<span class="header__cart-price">
-										<span class="header__cart-currency">$</span>24.99
+										<span class="currency">₴</span>
+										24.99
 									</span>
 								</li>
-								<li class="header__cart-list">
-									<span class="header__cart-product">
+								<li class="header__cart-item">
+									<span class="header__product-name">
 										Product 1
 									</span> -
 									<span class="header__cart-price">
-										<span class="header__cart-currency">$</span>14.99
+										<span class="currency">₴</span>
+										14.99
 									</span>
 								</li>
-								<li class="header__cart-list">
-									<span class="header__cart-product">
+								<li class="header__cart-item">
+									<span class="header__product-name">
 										Product 1
 									</span> -
 									<span class="header__cart-price">
-										<span class="header__cart-currency">$</span>34.99
+										<span class="currency">₴</span>
+										34.99
 									</span>
 								</li>
 							</ul>
 							<div class="header__cart-total">
 								<span class="header__total-text">Загальна вартість:</span>
-								<span class="header__total-price"><span class="header__cart-currency">$</span>95.96</span>
+								<span class="header__total-price"><span class="currency">₴ </span>95.96</span>
 							</div>
 							<a href="#" class="header__cart-link">Оформити замовлення</a>
 						</div>
@@ -206,7 +210,7 @@
 								</a>
 								<span class="product-card__price">
 									160
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -226,7 +230,7 @@
 								</a>
 								<span class="product-card__price">
 									190
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -246,7 +250,7 @@
 								</a>
 								<span class="product-card__price">
 									260
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -266,7 +270,7 @@
 								</a>
 								<span class="product-card__price">
 									199
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -286,7 +290,7 @@
 								</a>
 								<span class="product-card__price">
 									180
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -305,7 +309,7 @@
 								</a>
 								<span class="product-card__price">
 									160
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -325,7 +329,7 @@
 								</a>
 								<span class="product-card__price">
 									190
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -345,7 +349,7 @@
 								</a>
 								<span class="product-card__price">
 									260
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -365,7 +369,7 @@
 								</a>
 								<span class="product-card__price">
 									199
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -385,7 +389,7 @@
 								</a>
 								<span class="product-card__price">
 									180
-									<span class="product-card__currency">
+									<span class="currency">
 										грн.
 									</span>
 								</span>
@@ -446,144 +450,145 @@
 						<ul class="restaurants__list swiper-wrapper">
 							<li class="restaurants__item swiper-slide">
 								<article class="restaurants-card">
-									<a class="restaurants-card__link" href="#">
-										<img class="restaurants-card__img" src="./images/restaurants/1.jpg" alt="Блейз піца"
-											width="370" height="300">
-										<div class="restaurants-card__box">
-											<h3 class="restaurants-card__title">
-												Blaze Pizza
-											</h3>
-											<div class="restaurants-card__bottom">
-												<span class="restaurants-card__time">11:00-22:00</span>
-												<div class="restaurants-card__decor">
-													<span class="visually-hidden">
-														Перейти до перегляду
-													</span>
-													<svg class="restaurants-card__icon" width="14" height="13">
-														<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
-													</svg>
-												</div>
-											</div>
+									<img class="restaurants-card__img" src="./images/restaurants/1.jpg" alt="Блейз піца"
+										width="370" height="300">
+									<div class="restaurants-card__box">
+										<h3 class="restaurants-card__title">
+											Blaze Pizza
+										</h3>
+										<div class="restaurants-card__bottom">
+											<span class="restaurants-card__time"><time
+													datetime="2023-05-10T11:00">11:00</time>-<time
+													datetime="2023-05-10T22:00">10:00</time></span>
+											<a class="restaurants-card__link" href="#">
+												<span class="visually-hidden">
+													Перейти до перегляду
+												</span>
+												<svg class="restaurants-card__icon" width="14" height="13">
+													<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+												</svg>
+											</a>
 										</div>
-									</a>
+									</div>
 								</article>
 							</li>
 							<li class="restaurants__item swiper-slide">
 								<article class="restaurants-card">
-									<a class="restaurants-card__link" href="#">
-										<img class="restaurants-card__img" src="./images/restaurants/2.jpg" alt="Ранчо піца"
-											width="370" height="300">
-										<div class="restaurants-card__box">
-											<h3 class="restaurants-card__title">
-												Pizza Runcho
-											</h3>
-											<div class="restaurants-card__bottom">
-												<span class="restaurants-card__time">12:00-21:00</span>
-												<div class="restaurants-card__decor">
-													<span class="visually-hidden">
-														Перейти до перегляду
-													</span>
-													<svg class="restaurants-card__icon" width="14" height="13">
-														<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
-													</svg>
-												</div>
-											</div>
+									<img class="restaurants-card__img" src="./images/restaurants/2.jpg" alt="Ранчо піца"
+										width="370" height="300">
+									<div class="restaurants-card__box">
+										<h3 class="restaurants-card__title">
+											Pizza Runcho
+										</h3>
+										<div class="restaurants-card__bottom">
+											<span class="restaurants-card__time"><time
+													datetime="2023-05-10T12:00">12:00</time>-<time
+													datetime="2023-05-10T21:00">21:00</time></span>
+											<a class="restaurants-card__link" href="#">
+												<span class="visually-hidden">
+													Перейти до перегляду
+												</span>
+												<svg class="restaurants-card__icon" width="14" height="13">
+													<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+												</svg>
+											</a>
 										</div>
-									</a>
+									</div>
+
 								</article>
 							</li>
 							<li class="restaurants__item swiper-slide">
 								<article class="restaurants-card">
-									<a class="restaurants-card__link" href="#">
-										<img class="restaurants-card__img" src="./images/restaurants/3.jpg" alt="Хат піца"
-											width="370" height="300">
-										<div class="restaurants-card__box">
-											<h3 class="restaurants-card__title">
-												Pizza Hut
-											</h3>
-											<div class="restaurants-card__bottom">
-												<span class="restaurants-card__time">11:00-22:00</span>
-												<div class="restaurants-card__decor">
-													<span class="visually-hidden">
-														Перейти до перегляду
-													</span>
-													<svg class="restaurants-card__icon" width="14" height="13">
-														<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
-													</svg>
-												</div>
-											</div>
+									<img class="restaurants-card__img" src="./images/restaurants/3.jpg" alt="Хат піца"
+										width="370" height="300">
+									<div class="restaurants-card__box">
+										<h3 class="restaurants-card__title">
+											Pizza Hut
+										</h3>
+										<div class="restaurants-card__bottom">
+											<span class="restaurants-card__time"><time
+													datetime="2023-05-10T11:00">11:00</time>-<time
+													datetime="2023-05-10T22:00">22:00</time></span>
+											<a class="restaurants-card__link" href="#">
+												<span class="visually-hidden">
+													Перейти до перегляду
+												</span>
+												<svg class="restaurants-card__icon" width="14" height="13">
+													<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+												</svg>
+											</a>
 										</div>
-									</a>
+									</div>
 								</article>
 							</li>
 							<li class="restaurants__item swiper-slide">
 								<article class="restaurants-card">
-									<a class="restaurants-card__link" href="#">
-										<img class="restaurants-card__img" src="./images/restaurants/4.jpg" alt="МакДональдз"
-											width="370" height="300">
-										<div class="restaurants-card__box">
-											<h3 class="restaurants-card__title">
-												McDonald`s
-											</h3>
-											<div class="restaurants-card__bottom">
-												<span class="restaurants-card__time">6:00-23:00</span>
-												<div class="restaurants-card__decor">
-													<span class="visually-hidden">
-														Перейти до перегляду
-													</span>
-													<svg class="restaurants-card__icon" width="14" height="13">
-														<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
-													</svg>
-												</div>
-											</div>
+									<img class="restaurants-card__img" src="./images/restaurants/4.jpg" alt="МакДональдз"
+										width="370" height="300">
+									<div class="restaurants-card__box">
+										<h3 class="restaurants-card__title">
+											McDonald`s
+										</h3>
+										<div class="restaurants-card__bottom">
+											<span class="restaurants-card__time"><time
+													datetime="2023-05-10T06:00">6:00</time>-<time
+													datetime="2023-05-10T23:00">23:00</time></span>
+											<a class="restaurants-card__link" href="#">
+												<span class="visually-hidden">
+													Перейти до перегляду
+												</span>
+												<svg class="restaurants-card__icon" width="14" height="13">
+													<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+												</svg>
+											</a>
 										</div>
-									</a>
+									</div>
 								</article>
 							</li>
 							<li class="restaurants__item swiper-slide">
 								<article class="restaurants-card">
-									<a class="restaurants-card__link" href="#">
-										<img class="restaurants-card__img" src="./images/restaurants/5.jpg" alt="КФЦ" width="370"
-											height="300">
-										<div class="restaurants-card__box">
-											<h3 class="restaurants-card__title">KFC</h3>
-											<div class="restaurants-card__bottom">
-												<span class="restaurants-card__time">11:00-23:30</span>
-												<div class="restaurants-card__decor">
-													<span class="visually-hidden">
-														Перейти до перегляду
-													</span>
-													<svg class="restaurants-card__icon" width="14" height="13">
-														<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
-													</svg>
-												</div>
-											</div>
+									<img class="restaurants-card__img" src="./images/restaurants/5.jpg" alt="КФЦ" width="370"
+										height="300">
+									<div class="restaurants-card__box">
+										<h3 class="restaurants-card__title">KFC</h3>
+										<div class="restaurants-card__bottom">
+											<span class="restaurants-card__time"><time
+													datetime="2023-05-10T06:00">6:00</time>-<time
+													datetime="2023-05-10T23:30">23:30</time></span>
+											<a class="restaurants-card__link" href="#">
+												<span class="visually-hidden">
+													Перейти до перегляду
+												</span>
+												<svg class="restaurants-card__icon" width="14" height="13">
+													<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+												</svg>
+											</a>
 										</div>
-									</a>
+									</div>
 								</article>
 							</li>
 							<li class="restaurants__item swiper-slide">
 								<article class="restaurants-card">
-									<a class="restaurants-card__link" href="#">
-										<img class="restaurants-card__img" src="./images/restaurants/6.jpg" alt="Стар бургер"
-											width="370" height="300">
-										<div class="restaurants-card__box">
-											<h3 class="restaurants-card__title">
-												Star Burgers
-											</h3>
-											<div class="restaurants-card__bottom">
-												<span class="restaurants-card__time">9:00-21:00</span>
-												<div class="restaurants-card__decor">
-													<span class="visually-hidden">
-														Перейти до перегляду
-													</span>
-													<svg class="restaurants-card__icon" width="14" height="13">
-														<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
-													</svg>
-												</div>
-											</div>
+									<img class="restaurants-card__img" src="./images/restaurants/6.jpg" alt="Стар бургер"
+										width="370" height="300">
+									<div class="restaurants-card__box">
+										<h3 class="restaurants-card__title">
+											Star Burgers
+										</h3>
+										<div class="restaurants-card__bottom">
+											<span class="restaurants-card__time"><time
+													datetime="2023-05-10T09:00">9:00</time>-<time
+													datetime="2023-05-10T21:00">21:00</time></span>
+											<a class="restaurants-card__link" href="#">
+												<span class="visually-hidden">
+													Перейти до перегляду
+												</span>
+												<svg class="restaurants-card__icon" width="14" height="13">
+													<use href="./images/icon/symbol-defs.svg#icon-icon-arrow-right"></use>
+												</svg>
+											</a>
 										</div>
-									</a>
+									</div>
 								</article>
 							</li>
 						</ul>
@@ -598,7 +603,7 @@
 					</h2>
 					<div class="reviews__content swiper">
 						<div class="reviews__wrapper swiper-wrapper">
-							<div class="reviews__slid swiper-slide">
+							<div class="reviews__slide swiper-slide">
 								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
 								<blockquote class="reviews__info">
 									<p class="reviews__text">
@@ -616,7 +621,7 @@
 									</cite>
 								</blockquote>
 							</div>
-							<div class="reviews__slid swiper-slide">
+							<div class="reviews__slide swiper-slide">
 								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
 								<blockquote class="reviews__info">
 									<p class="reviews__text">
@@ -634,7 +639,7 @@
 									</cite>
 								</blockquote>
 							</div>
-							<div class="reviews__slid swiper-slide">
+							<div class="reviews__slide swiper-slide">
 								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
 								<blockquote class="reviews__info">
 									<p class="reviews__text">
@@ -652,7 +657,7 @@
 									</cite>
 								</blockquote>
 							</div>
-							<div class="reviews__slid swiper-slide">
+							<div class="reviews__slide swiper-slide">
 								<img class="reviews__img" src="./images/reviews/daryna.jpg" alt="Фото Дарини">
 								<blockquote class="reviews__info">
 									<p class="reviews__text">
@@ -673,14 +678,14 @@
 						</div>
 						<div class="reviews__navigation">
 							<button class="reviews__arrow-left" type="button">
-								<span class="visually-hidden">Стрілка вліво</span>
+								<span class="visually-hidden">вліво</span>
 								<svg class="reviews__icon" width="11" height="18">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-chevron-left"></use>
 								</svg>
 							</button>
 							<div class="reviews__pagination"></div>
 							<button class="reviews__arrow-right" type="button">
-								<span class="visually-hidden">Стрілка до вправо</span>
+								<span class="visually-hidden">вправо</span>
 								<svg class="reviews__icon" width="11" height="18">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-chevron-right"></use>
 								</svg>
@@ -703,12 +708,12 @@
 						<div class="app__links">
 							<a class="app__link app__link--store" href="#"
 								style="background-image: url(./images/app-store.svg);">
-								<span class="visually-hidden">App Store</span>
+								<span class="visually-hidden">Апп стор</span>
 							</a>
 							<a class="app__link app__link--play" href="#"
 								style="background-image: url(./images/play-store.svg);">
 								<span class="visually-hidden">
-									Google Play</span>
+									Плей маркет</span>
 							</a>
 						</div>
 					</div>
