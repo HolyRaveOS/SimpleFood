@@ -2,6 +2,7 @@
 	transition: box-shadow 0.3s, opacity 0.3s;
 	border-radius: 5px;
 	display: block;
+	width: 200px;
 
 	&__img {
 		object-fit: contain;
@@ -20,10 +21,88 @@
 	}
 }
 
+.burger-open {
+	height: 44px;
+	width: 44px;
+	border-radius: 3px;
+	z-index: 3;
+	transition: box-shadow 0.3s, background-color 0.3s;
+	display: flex;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	transition: box-shadow 0.3s, background-color 0.3s;
+
+	&:focus {
+		box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+	}
+
+	&:active {
+		background-color: rgba(255, 104, 56, 0.1);
+	}
+
+	@include mqmax('desktop') {
+		display: flex;
+	}
+
+	&__line {
+		position: relative;
+		background-color: $blueColor;
+		width: 30px;
+		height: 2px;
+		transition: background-color 0.3s;
+
+		&::before,
+		&::after {
+			content: '';
+			background-color: $blueColor;
+			width: 30px;
+			height: 2px;
+			right: 0;
+			position: absolute;
+			transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+		}
+
+		&::before {
+			top: 10px;
+		}
+
+		&::after {
+			top: -10px;
+		}
+	}
+}
+
+.burger-close {
+	height: 44px;
+	width: 44px;
+	border-radius: 3px;
+	z-index: 3;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	right: 0;
+	transition: box-shadow 0.3s, background-color 0.3s;
+	top: 25px;
+	transition: box-shadow 0.3s, background-color 0.3s;
+
+	&__icon {
+		fill: $blueColor;
+	}
+
+	&:focus {
+		box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.7);
+	}
+
+	&:active {
+		background-color: rgba(255, 104, 56, 0.1);
+	}
+}
+
 .product-card {
 	display: flex;
 	flex-direction: column;
-	max-width: 210px;
 	align-items: center;
 	text-align: center;
 	background-color: #FFFFFF;
@@ -34,6 +113,7 @@
 	padding: 20px 15px;
 	transition: box-shadow 0.3s;
 	height: 100%;
+	margin: 0 auto;
 
 	&:hover {
 		box-shadow: 0px 0px 0px 1px $orangeColor;
@@ -96,6 +176,11 @@
 		font-size: 18px;
 		padding: 12px 32px;
 		letter-spacing: 0.03em;
+
+		@include mqmax('phone') {
+			padding: 8px 24px;
+			font-size: 14px;
+		}
 	}
 }
 
@@ -104,6 +189,14 @@
 	font-weight: 500;
 	font-size: 36px;
 	line-height: 1.3;
+
+	@include mqmax('tablet') {
+		font-size: 30px;
+	}
+
+	@include mqmax('phone') {
+		font-size: 24px;
+	}
 }
 
 .restaurants-card {
@@ -114,7 +207,6 @@
 	height: 100%;
 	display: flex;
 	flex-direction: column;
-	height: 100%;
 
 	&:hover {
 		box-shadow: 0px 3px 15px rgba(255, 104, 56, 0.5);
@@ -122,6 +214,8 @@
 
 	&__img {
 		object-fit: contain;
+		overflow: hidden;
+		height: fit-content;
 	}
 
 	&__box {
@@ -206,5 +300,147 @@
 	&__icon {
 		fill: #fff;
 		transition: transform 0.3s ease 0s;
+	}
+}
+
+.mobile {
+	position: fixed;
+	top: 0;
+	left: -100%;
+	height: 100%;
+	width: 80%;
+	background-color: #fff;
+	padding-left: 15px;
+	flex-direction: column;
+	z-index: 4;
+	transition: left 0.3s;
+
+	&.active {
+		left: 0;
+	}
+
+	&.header__menu::after {
+		content: '';
+		position: absolute;
+		right: 0;
+		left: 0;
+		min-width: 100%;
+		height: 100%;
+	}
+
+	&.header__menu.active::after {
+		background: rgba(0, 0, 0, 0.5);
+		left: 100%;
+	}
+
+	.header__logo {
+		padding: 25px 0;
+		width: 200px;
+	}
+
+	&.header__menu {
+		align-items: start;
+		justify-content: start;
+	}
+
+	.header__list {
+		display: block;
+		width: 100%;
+		padding: 15px 0;
+		position: relative;
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			display: block;
+			background-color: #EEEFF3;
+			height: 1px;
+			min-width: 100%;
+			left: -15px;
+			right: 0;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+	}
+
+	.header__item {
+		&:not(:last-child) {
+			margin-right: 0px;
+		}
+	}
+
+	.header__link {
+		padding: 10px 0;
+		display: block;
+
+		&:active {
+			background-color: #fed0c4;
+			text-shadow: none;
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+
+	.footer__contacts-list {
+		padding: 7px 0;
+		width: 100%;
+	}
+
+	.footer__contacts-item {
+		margin-bottom: 0;
+		width: 100%;
+	}
+
+	.footer__contacts-link {
+		padding: 8px 0;
+
+		&:active {
+			background-color: #fed0c4;
+			text-shadow: none;
+		}
+
+		&:focus {
+			box-shadow: none;
+		}
+	}
+}
+
+.pagination {
+	.swiper-pagination-bullet {
+		width: 15px;
+		height: 15px;
+		background-color: $grayColor;
+		transition: background-color 0.3s, box-shadow 0.3s;
+
+		&:not(:last-child) {
+			margin-right: 10px;
+		}
+
+		&:focus {
+			box-shadow: 0px 0px 0px 2px $orangeColor;
+			background-color: $grayColor;
+		}
+
+		&:hover {
+			background-color: #FFF2ED;
+			box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.5);
+		}
+
+		&:active {
+			background-color: rgba(255, 104, 56, 0.5);
+		}
+	}
+
+	.swiper-pagination-bullet-active {
+		background-color: $orangeColor;
 	}
 }
