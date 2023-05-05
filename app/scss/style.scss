@@ -410,6 +410,10 @@
 		justify-content: center;
 		margin-bottom: 30px;
 
+		@include mqmax('desktop') {
+			justify-content: space-evenly;
+		}
+
 		@include mqmax('tablet-2') {
 			gap: 10px;
 			row-gap: 20px;

@@ -1,21 +1,14 @@
 
 $(function () {
 
-	$(window).resize(function () {
-		if ($(window).width() < 1200) {
-			$(".popular__wrapper").addClass("swiper");
-			$(".popular__filter-item").addClass("swiper-slide");
-		} else {
-			$(".popular__wrapper").removeClass("swiper");
-			$(".popular__filter-item").removeClass("swiper-slide");
-		}
-	});
-
 	$(document).ready(function () {
 		var mySwiper = null;
 
 		function initSwiper() {
 			if ($(window).width() <= 1200) {
+				$(".popular__wrapper").addClass("swiper");
+				$(".popular__filter-item").addClass("swiper-slide");
+
 				if (!mySwiper) {
 					mySwiper = new Swiper('.popular__wrapper', {
 						loop: false,
@@ -23,6 +16,9 @@ $(function () {
 					});
 				}
 			} else {
+				$(".popular__wrapper").removeClass("swiper");
+				$(".popular__filter-item").removeClass("swiper-slide");
+
 				if (mySwiper) {
 					mySwiper.destroy();
 					mySwiper = null;
@@ -73,11 +69,13 @@ $(function () {
 		}
 	});
 
-	$(document).ready(function () {
+	$(window).on('load', function () {
 		var mySwiper = null;
 
 		function initSwiper() {
-			if ($(window).width() <= 768) {
+			if ($(window).width() < 768) {
+				$(".restaurants__wrapper").addClass("swiper");
+				$(".restaurants__item").addClass("swiper-slide");
 				if (!mySwiper) {
 					mySwiper = new Swiper('.restaurants__wrapper', {
 						pagination: {
@@ -90,6 +88,8 @@ $(function () {
 					});
 				}
 			} else {
+				$(".restaurants__wrapper").removeClass("swiper");
+				$(".restaurants__item").removeClass("swiper-slide");
 				if (mySwiper) {
 					mySwiper.destroy();
 					mySwiper = null;
