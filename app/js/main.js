@@ -37,14 +37,14 @@ $(function () {
 
 
 	$(document).ready(function () {
-		$('.burger-open,.burger-close,.menu__list a').click(function (event) {
-			$('.burger-close,.burger-close__icon,.mobile').toggleClass('active')
+		$('.burger-open,.close-btn,.menu__list a').click(function (event) {
+			$('.close-btn,.close-btn__icon,.mobile-menu').toggleClass('active')
 			$('body').toggleClass('lock');
 			event.stopPropagation();
 		});
 
 		$(document).click(function (event) {
-			var container = $(".mobile");
+			var container = $(".mobile-menu");
 			if (!container.is(event.target) && container.has(event.target).length === 0) {
 				container.removeClass('active');
 				$('body').removeClass('lock');
@@ -59,21 +59,11 @@ $(function () {
 	});
 
 
-	$(window).resize(function () {
-		if ($(window).width() < 768) {
-			$(".restaurants__wrapper").addClass("swiper");
-			$(".restaurants__item").addClass("swiper-slide");
-		} else {
-			$(".restaurants__wrapper").removeClass("swiper");
-			$(".restaurants__item").removeClass("swiper-slide");
-		}
-	});
-
-	$(window).on('load', function () {
+	$(document).ready(function () {
 		var mySwiper = null;
 
 		function initSwiper() {
-			if ($(window).width() < 768) {
+			if ($(window).width() <= 768) {
 				$(".restaurants__wrapper").addClass("swiper");
 				$(".restaurants__item").addClass("swiper-slide");
 				if (!mySwiper) {
@@ -82,14 +72,15 @@ $(function () {
 							el: '.restaurants__pagination',
 							clickable: true,
 						},
-						loop: false,
-						slidesPerView: "auto",
+						loop: true,
+						slidesPerView: 1,
 						spaceBetween: 20,
 					});
 				}
 			} else {
 				$(".restaurants__wrapper").removeClass("swiper");
 				$(".restaurants__item").removeClass("swiper-slide");
+
 				if (mySwiper) {
 					mySwiper.destroy();
 					mySwiper = null;
@@ -106,12 +97,14 @@ $(function () {
 
 
 	$(document).ready(function () {
-		$('.header__search-form,.header__cart').hide();
+		$('.header__search-form, .header__cart').hide();
 		$('.header__user-btn-cart').click(function () {
+			$('.header__search-form').slideUp('fast');
 			$('.header__cart').slideToggle('fast');
 		});
 		$('.header__search-form').css('display', 'flex').hide();
 		$('.header__user-btn').click(function () {
+			$('.header__cart').slideUp('fast');
 			$('.header__search-form').slideToggle('fast');
 		});
 	});

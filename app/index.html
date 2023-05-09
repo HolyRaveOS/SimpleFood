@@ -35,85 +35,93 @@
 							</a>
 						</li>
 					</ul>
-					<div class="header__menu mobile">
-						<a class="header__logo logo" href="#">
+					<div class="mobile-menu">
+						<button type="button" class="burger-open">
+							<span class="visually-hidden">Відкрити меню</span>
+							<span class="burger-open__line"></span>
+						</button>
+						<a class="logo" href="#">
 							<img class="logo__img" src="./images/logo.svg" alt="Логотип" width="200" height="39">
 						</a>
-						<button type="button" class="burger-close" tabindex="2">
+						<div class="mobile-menu__row">
+							<ul class="mobile-menu__list">
+								<li class="mobile-menu__item">
+									<a class="mobile-menu__link mobile-menu__link--active" href="#">
+										Головна
+									</a>
+								</li>
+								<li class="mobile-menu__item">
+									<a class="mobile-menu__link" href="#">
+										Страви
+									</a>
+								</li>
+								<li class="mobile-menu__item">
+									<a class="mobile-menu__link" href="#">
+										Контакти
+									</a>
+								</li>
+							</ul>
+							<address class="contacts">
+								<ul class="contacts__list">
+									<li class="contacts__item">
+										<a class="contacts__link" href="#">
+											<svg class="contacts__icon" width="21" height="21">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-location"></use>
+											</svg>
+											вул. Т.Г.Шевченка, 1
+										</a>
+									</li>
+									<li class="contacts__item">
+										<a class="contacts__link" href="tel:+380501112233">
+											<svg class="contacts__icon" width="26" height="26">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-call"></use>
+											</svg>
+											380501112233
+										</a>
+									</li>
+									<li class="contacts__item">
+										<a class="contacts__link" href="mailto:support@sfood.com">
+											<svg class="contacts__icon" width="24" height="24">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-message"></use>
+											</svg>
+											support@sfood.com
+										</a>
+									</li>
+								</ul>
+								<ul class="contacts__social-list">
+									<li class="contacts__social-item">
+										<a class="contacts__social-link" href="#">
+											<span class="visually-hidden">Фейсбук</span>
+											<svg class="contacts__social-icon" width="21" height="21">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-facebook"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="contacts__social-item">
+										<a class="contacts__social-link" href="#">
+											<span class="visually-hidden">Твіттер</span>
+											<svg class="contacts__social-icon" width="21" height="21">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-twitter"></use>
+											</svg>
+										</a>
+									</li>
+									<li class="contacts__social-item">
+										<a class="contacts__social-link" href="#">
+											<span class="visually-hidden">Інстаграм</span>
+											<svg class="contacts__social-icon" width="21" height="21">
+												<use href="./images/icon/symbol-defs.svg#icon-icon-instagram"></use>
+											</svg>
+										</a>
+									</li>
+								</ul>
+							</address>
+						</div>
+						<button type="button" class="close-btn">
 							<span class="visually-hidden">Закрити меню</span>
-							<svg class="burger-close__icon" width="18" height="18">
+							<svg class="close-btn__icon" width="18" height="18">
 								<use href="./images/icon/symbol-defs.svg#icon-close"></use>
 							</svg>
 						</button>
-						<ul class="header__list">
-							<li class="header__item">
-								<a class="header__link header__link--active" href="#">
-									Головна
-								</a>
-							</li>
-							<li class="header__item">
-								<a class="header__link" href="#">
-									Страви
-								</a>
-							</li>
-							<li class="header__item">
-								<a class="header__link" href="#">
-									Контакти
-								</a>
-							</li>
-						</ul>
-						<ul class="footer__contacts-list">
-							<li class="footer__contacts-item">
-								<a class="footer__contacts-link" href="#">
-									<svg class="footer__contacts-icon" width="21" height="21">
-										<use href="./images/icon/symbol-defs.svg#icon-icon-location"></use>
-									</svg>
-									вул. Т.Г.Шевченка, 1
-								</a>
-							</li>
-							<li class="footer__contacts-item">
-								<a class="footer__contacts-link" href="tel:+380501112233">
-									<svg class="footer__contacts-icon" width="26" height="26">
-										<use href="./images/icon/symbol-defs.svg#icon-icon-call"></use>
-									</svg>
-									380501112233
-								</a>
-							</li>
-							<li class="footer__contacts-item">
-								<a class="footer__contacts-link" href="mailto:support@sfood.com">
-									<svg class="footer__contacts-icon" width="24" height="24">
-										<use href="./images/icon/symbol-defs.svg#icon-icon-message"></use>
-									</svg>
-									support@sfood.com
-								</a>
-							</li>
-						</ul>
-						<ul class="footer__social-list">
-							<li class="footer__social-item">
-								<a class="footer__social-link" href="#">
-									<span class="visually-hidden">Фейсбук</span>
-									<svg class="footer__social-icon" width="21" height="21">
-										<use href="./images/icon/symbol-defs.svg#icon-icon-facebook"></use>
-									</svg>
-								</a>
-							</li>
-							<li class="footer__social-item">
-								<a class="footer__social-link" href="#">
-									<span class="visually-hidden">Твіттер</span>
-									<svg class="footer__social-icon" width="21" height="21">
-										<use href="./images/icon/symbol-defs.svg#icon-icon-twitter"></use>
-									</svg>
-								</a>
-							</li>
-							<li class="footer__social-item">
-								<a class="footer__social-link" href="#">
-									<span class="visually-hidden">Інстаграм</span>
-									<svg class="footer__social-icon" width="21" height="21">
-										<use href="./images/icon/symbol-defs.svg#icon-icon-instagram"></use>
-									</svg>
-								</a>
-							</li>
-						</ul>
 					</div>
 				</nav>
 				<div class="header__user-items">
@@ -194,10 +202,6 @@
 							<a href="#" class="header__cart-link">Оформити замовлення</a>
 						</div>
 					</div>
-					<button type="button" class="burger-open" tabindex="1">
-						<span class="visually-hidden">Відкрити меню</span>
-						<span class="burger-open__line"></span>
-					</button>
 				</div>
 			</div>
 		</header>
@@ -891,54 +895,54 @@
 						</li>
 					</ul>
 				</nav>
-				<address class="footer__contacts">
-					<ul class="footer__contacts-list">
-						<li class="footer__contacts-item">
-							<a class="footer__contacts-link" href="#">
-								<svg class="footer__contacts-icon" width="21" height="21">
+				<address class="contacts">
+					<ul class="contacts__list">
+						<li class="contacts__item">
+							<a class="contacts__link" href="#">
+								<svg class="contacts__icon" width="21" height="21">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-location"></use>
 								</svg>
 								вул. Т.Г.Шевченка, 1
 							</a>
 						</li>
-						<li class="footer__contacts-item">
-							<a class="footer__contacts-link" href="tel:+380501112233">
-								<svg class="footer__contacts-icon" width="26" height="26">
+						<li class="contacts__item">
+							<a class="contacts__link" href="tel:+380501112233">
+								<svg class="contacts__icon" width="26" height="26">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-call"></use>
 								</svg>
 								380501112233
 							</a>
 						</li>
-						<li class="footer__contacts-item">
-							<a class="footer__contacts-link" href="mailto:support@sfood.com">
-								<svg class="footer__contacts-icon" width="24" height="24">
+						<li class="contacts__item">
+							<a class="contacts__link" href="mailto:support@sfood.com">
+								<svg class="contacts__icon" width="24" height="24">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-message"></use>
 								</svg>
 								support@sfood.com
 							</a>
 						</li>
 					</ul>
-					<ul class="footer__social-list">
-						<li class="footer__social-item">
-							<a class="footer__social-link" href="#">
+					<ul class="contacts__social-list">
+						<li class="contacts__social-item">
+							<a class="contacts__social-link" href="#">
 								<span class="visually-hidden">Фейсбук</span>
-								<svg class="footer__social-icon" width="21" height="21">
+								<svg class="contacts__social-icon" width="21" height="21">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-facebook"></use>
 								</svg>
 							</a>
 						</li>
-						<li class="footer__social-item">
-							<a class="footer__social-link" href="#">
+						<li class="contacts__social-item">
+							<a class="contacts__social-link" href="#">
 								<span class="visually-hidden">Твіттер</span>
-								<svg class="footer__social-icon" width="21" height="21">
+								<svg class="contacts__social-icon" width="21" height="21">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-twitter"></use>
 								</svg>
 							</a>
 						</li>
-						<li class="footer__social-item">
-							<a class="footer__social-link" href="#">
+						<li class="contacts__social-item">
+							<a class="contacts__social-link" href="#">
 								<span class="visually-hidden">Інстаграм</span>
-								<svg class="footer__social-icon" width="21" height="21">
+								<svg class="contacts__social-icon" width="21" height="21">
 									<use href="./images/icon/symbol-defs.svg#icon-icon-instagram"></use>
 								</svg>
 							</a>

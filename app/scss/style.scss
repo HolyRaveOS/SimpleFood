@@ -2,9 +2,7 @@
 @import 'reset';
 @import 'libs';
 @import 'vars';
-@import 'mixin';
 @import 'global';
-@import 'commons';
 @import 'header';
 @import 'footer';
 
@@ -16,23 +14,26 @@
 		justify-content: space-between;
 		background-repeat: no-repeat;
 		background-position: 97%;
-		background-size: 560px 660px;
-		min-height: 76vh;
-
-		@include mqmax('phone') {
-			min-height: fit-content;
-		}
-
-		@include mqmax('desktop') {
-			background-size: 400px 460px;
-		}
+		background-size: 47% 100%;
+		min-height: 71vh;
+		position: relative;
 
 		@include mqmax('tablet-2') {
-			background-size: 300px 350px;
+			background-size: contain;
+
+			&::before {
+				content: '';
+				background: rgba(249, 250, 255, 0.85);
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
 		}
 
-		@include mqmax('tablet') {
-			background-size: 0%;
+		@include mqmax('phone') {
+			min-height: 42vh;
 		}
 	}
 
@@ -41,6 +42,7 @@
 		display: flex;
 		flex-direction: column;
 		max-width: 500px;
+		z-index: 1;
 	}
 
 	&__title {
@@ -53,6 +55,11 @@
 
 		@include mqmax('tablet') {
 			font-size: 40px;
+		}
+
+		@media (max-width:992px) and (orientation: landscape) {
+			font-size: 35px;
+			margin-bottom: 10px;
 		}
 	}
 
@@ -68,6 +75,11 @@
 
 		@include mqmax('phone') {
 			font-size: 16px;
+		}
+
+		@media (max-width:992px) and (orientation: landscape) {
+			font-size: 16px;
+			margin-bottom: 15px;
 		}
 	}
 
@@ -146,33 +158,14 @@
 		transition: background-color 0.4s, color 0.4s;
 
 		@include mqmax('tablet-2') {
-			font-size: 18px;
-			padding: 13px 30px;
-
-			.popular__icon {
-				width: 38px;
-				height: 38px;
-			}
-		}
-
-		@include mqmax('tablet') {
 			font-size: 16px;
 			padding: 12px 28px;
-
-			.popular__icon {
-				width: 34px;
-				height: 34px;
-			}
 		}
+
 
 		@include mqmax('phone') {
 			font-size: 14px;
 			padding: 11px 14px;
-
-			.popular__icon {
-				width: 20px;
-				height: 20px;
-			}
 		}
 
 		&:focus {
@@ -214,21 +207,29 @@
 		margin-right: 10px;
 		fill: #000000;
 		flex-shrink: 0;
+
+		@include mqmax('tablet-2') {
+			width: 34px;
+			height: 34px;
+		}
+
+		@include mqmax('phone') {
+			width: 20px;
+			height: 20px;
+		}
 	}
 
 	&__filter-item {
 		&:not(:last-child) {
 			margin-right: 20px;
+
+			@include mqmax('tablet') {
+				margin-right: 10px;
+			}
 		}
 
 		flex-shrink: 0;
 		width: fit-content;
-
-		@include mqmax('tablet') {
-			&:not(:last-child) {
-				margin-right: 10px;
-			}
-		}
 	}
 
 	&__list {
@@ -237,8 +238,8 @@
 		grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
 		gap: 30px;
 
-		@include mqmax('phone-min') {
-			grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+		@include mqmax('phone') {
+			grid-template-columns: repeat(auto-fill, minmax(142px, 49.1%));
 			gap: 5px;
 			row-gap: 10px;
 		}
@@ -275,7 +276,7 @@
 		padding: 0 70px;
 		background-repeat: no-repeat;
 		background-position: 11.5% center;
-		background-size: 440px 585px;
+		background-size: 36% 100%;
 		position: relative;
 
 		@include mqmax('desktop') {
@@ -294,8 +295,6 @@
 			padding: 0 15px;
 			background-size: contain;
 		}
-
-		@include mqmax('tablet') {}
 	}
 
 	&__content {
@@ -327,18 +326,17 @@
 	}
 
 	&__item {
-		&:not(:last-child) {
-			margin-bottom: 20px;
-		}
-
 		font-size: 24px;
 		color: $blueColor;
-
 		display: flex;
 		align-items: flex-start;
 
 		@include mqmax('phone') {
 			font-size: 18px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
 		}
 	}
 
@@ -361,14 +359,6 @@
 }
 
 .restaurants {
-	&__item {
-		max-width: 370px;
-		width: 100%;
-
-		@include mqmax('tablet-2') {
-			max-width: 345px;
-		}
-	}
 
 	&__title {
 		text-align: center;
@@ -379,26 +369,19 @@
 		}
 	}
 
-	&__wrapper {
-		&.swiper {
-			overflow: visible;
-		}
-
-		.swiper-pagination-bullet {
-			display: none;
-		}
-
-		.swiper-pagination-clickable {
-			display: none;
-		}
+	.swiper-pagination-bullet,
+	.swiper-pagination-clickable {
+		display: none;
 
 		@include mqmax('tablet') {
-			.swiper-pagination-bullet {
-				display: flex;
-			}
+			display: flex;
+		}
+	}
 
-			.swiper-pagination-clickable {
-				display: flex;
+	@include mqmax('tablet') {
+		&__wrapper {
+			&.swiper {
+				overflow: visible;
 			}
 		}
 	}
@@ -482,7 +465,6 @@
 
 		@include mqmax('tablet') {
 			max-width: 450px;
-
 		}
 
 		@include mqmax('phone') {
@@ -517,7 +499,7 @@
 			top: 0px;
 			left: -40px;
 
-			@include mqmax('phone-min') {
+			@include mqmax('phone') {
 				left: -27px;
 				top: -5px;
 			}

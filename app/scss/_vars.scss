@@ -6,8 +6,36 @@ $blueColor: #363853;
 $darkColor: #31352b;
 $orangelight: #FF9674;
 
+@mixin mqmax($width, $type: max) {
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+
+		@if $type ==min {
+			$width: $width - 1px;
+		}
+
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+}
+
+@mixin mqmin($width, $type: min) {
+	@if map_has_key($breakpoints, $width) {
+		$width: map_get($breakpoints, $width);
+
+		@if $type ==max {
+			$width: $width - 1px;
+		}
+
+		@media only screen and (#{$type}-width: $width) {
+			@content;
+		}
+	}
+}
+
+
 $breakpoints: (
-	"phone-min": 480px,
 	"phone": 576px,
 	"tablet": 768px,
 	"tablet-2": 992px,

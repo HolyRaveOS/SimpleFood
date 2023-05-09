@@ -12,8 +12,7 @@
 		}
 
 		@include mqmax('phone') {
-
-			justify-content: flex-start;
+			justify-content: space-between;
 		}
 	}
 
@@ -67,11 +66,9 @@
 		font-size: 14px;
 
 		&:focus {
-
 			.footer__form-icon {
 				fill: $orangeColor;
 			}
-
 		}
 
 		&:hover {
@@ -93,6 +90,7 @@
 
 		@include mqmax('tablet-2') {
 			max-width: 100%;
+			margin-right: 0;
 		}
 	}
 
@@ -109,13 +107,16 @@
 	}
 
 	&__item {
-		&:not(:last-child) {
-			margin-bottom: 20px;
-		}
 
 		@include mqmax('tablet-2') {
-			&:not(:last-child) {
-				margin-bottom: 0px;
+			width: 100%;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+
+			@include mqmax('tablet-2') {
+				margin-bottom: 0;
 			}
 		}
 	}
@@ -129,12 +130,9 @@
 		display: block;
 		width: fit-content;
 
-		@include mqmax('desktop') {
-			margin: 0 auto;
-		}
-
 		@include mqmax('tablet-2') {
 			padding: 10px 0;
+			width: 100%;
 		}
 
 		&:focus {
@@ -148,117 +146,10 @@
 		&:active {
 			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
 			color: $darkColor;
-		}
-	}
 
-	&__contacts {
-		max-width: 262px;
-		width: 100%;
-
-		@include mqmax('desktop') {
-			margin-bottom: 30px;
-			order: -1;
-		}
-	}
-
-	&__contacts-list {
-		margin-bottom: 15px;
-
-		@include mqmax('tablet-2') {
-			margin-bottom: 7px;
-		}
-	}
-
-	&__contacts-item {
-		margin-bottom: 15px;
-		width: fit-content;
-
-		@include mqmax('tablet-2') {
-			margin-bottom: 0;
-		}
-	}
-
-	&__contacts-link {
-		display: flex;
-		align-items: flex-start;
-		font-size: 16px;
-		line-height: 2;
-		border-radius: 5px;
-		transition: box-shadow 0.3s, text-shadow 0.3s, color 0.3s;
-
-		@include mqmax('tablet-2') {
-			padding: 7px 0;
-		}
-
-		&:focus {
-			box-shadow: 0px 0px 0px 2px $orangelight;
-		}
-
-		&:hover {
-			color: $orangeColor;
-
-			.footer__contacts-icon {
-				fill: $orangeColor;
-			}
-		}
-
-		&:active {
-			text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
-			color: $darkColor;
-
-			.footer__contacts-icon {
-				fill: #000000;
-			}
-		}
-	}
-
-	&__contacts-icon {
-		margin-right: 7px;
-		flex-shrink: 0;
-		margin-top: 4px;
-	}
-
-	&__social-list {
-		display: flex;
-		flex-wrap: wrap;
-		row-gap: 13px;
-	}
-
-	&__social-item {
-		&:not(:last-child) {
-			margin-right: 13px;
-		}
-	}
-
-	&__social-link {
-		width: 39px;
-		height: 39px;
-		border-radius: 50%;
-		background-color: $silver-200;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		transition: background-color 0.3s, box-shadow 0.3s;
-
-		&:focus {
-			background-color: #FFF2ED;
-			box-shadow: 0px 0px 0px 2px $orangelight;
-		}
-
-		&:hover {
-			background-color: $orangeColor;
-
-			.footer__social-icon {
-				fill: #FFFFFF;
-			}
-		}
-
-		&:active {
-			background-color: #FFF2ED;
-			box-shadow: 0px 0px 0px 2px transparent;
-
-			.footer__social-icon {
-				fill: $orangeColor;
+			@include mqmax('tablet-2') {
+				text-shadow: none;
+				background-color: $orangelight;
 			}
 		}
 	}
