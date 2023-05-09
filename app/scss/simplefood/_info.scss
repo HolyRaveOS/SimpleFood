@@ -1,0 +1,88 @@
+.info {
+	&__container {
+		display: flex;
+		justify-content: flex-end;
+		padding: 0 70px;
+		background-repeat: no-repeat;
+		background-position: 11.5% center;
+		background-size: 36% 100%;
+		position: relative;
+
+		@include mqmax('desktop') {
+			&::before {
+				content: '';
+				background-color: rgba(255, 255, 255, 0.85);
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+		}
+
+		@include mqmax('tablet-2') {
+			padding: 0 15px;
+			background-size: contain;
+		}
+	}
+
+	&__content {
+		max-width: 480px;
+		width: 100%;
+		padding: 58px 0;
+		z-index: 1;
+
+		@include mqmax('tablet-2') {
+			padding: 0;
+		}
+	}
+
+	&__title {
+		margin-bottom: 30px;
+	}
+
+	&__text {
+		opacity: 0.9;
+		margin-bottom: 30px;
+
+		@include mqmax('phone') {
+			font-size: 18px;
+		}
+	}
+
+	&__list {
+		margin-bottom: 30px;
+	}
+
+	&__item {
+		font-size: 24px;
+		color: $blueColor;
+		display: flex;
+		align-items: flex-start;
+
+		@include mqmax('phone') {
+			font-size: 18px;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__icon {
+		margin-right: 30px;
+		flex-shrink: 0;
+
+		&--timer {
+			fill: $orangeColor;
+		}
+
+		&--delivery {
+			fill: #00AAFF;
+		}
+
+		&--restorant {
+			fill: #FF2222;
+		}
+	}
+}

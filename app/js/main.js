@@ -107,6 +107,12 @@ $(function () {
 			$('.header__cart').slideUp('fast');
 			$('.header__search-form').slideToggle('fast');
 		});
+
+		$(document).on('click', function (event) {
+			if (!$(event.target).closest('.header__user-btn, .header__search-form, .header__user-btn-cart, .header__cart').length) {
+				$('.header__search-form, .header__cart').slideUp('fast');
+			}
+		});
 	});
 
 

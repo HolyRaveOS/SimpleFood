@@ -1,0 +1,147 @@
+.popular {
+	text-align: center;
+
+	&__title {
+		margin-bottom: 60px;
+
+		@include mqmax('tablet') {
+			margin-bottom: 30px;
+		}
+	}
+
+	&__filter {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 45px;
+		flex-wrap: wrap;
+		row-gap: 20px;
+
+		@include mqmax('desktop') {
+			flex-wrap: nowrap;
+			justify-content: start;
+			padding: 2px;
+		}
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		border-radius: 5px;
+		padding: 14px 32px;
+		background-color: #FFFFFF;
+		box-shadow: 0 0 0 1px #ECECEC;
+		font-size: 20px;
+		color: $blueColor;
+		transition: background-color 0.4s, color 0.4s;
+
+		@include mqmax('tablet-2') {
+			font-size: 16px;
+			padding: 12px 28px;
+		}
+
+
+		@include mqmax('phone') {
+			font-size: 14px;
+			padding: 11px 14px;
+		}
+
+		&:focus {
+			background-color: #ffffff;
+			color: $blueColor;
+		}
+
+		&:hover {
+			background-color: rgba(255, 104, 56, 0.1);
+			color: $orangeColor;
+			box-shadow: 0px 0px 0px 2px $orangelight;
+
+			.popular__icon {
+				fill: $orangeColor;
+			}
+		}
+
+		&:active {
+			box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
+			background-color: #ffffff;
+			color: $blueColor;
+
+			.popular__icon {
+				fill: #000000;
+			}
+		}
+
+		&.mixitup-control-active {
+			background-color: $orangeColor;
+			color: #FFFFFF;
+
+			.popular__icon {
+				fill: #FFFFFF;
+			}
+		}
+	}
+
+	&__icon {
+		margin-right: 10px;
+		fill: #000000;
+		flex-shrink: 0;
+
+		@include mqmax('tablet-2') {
+			width: 34px;
+			height: 34px;
+		}
+
+		@include mqmax('phone') {
+			width: 20px;
+			height: 20px;
+		}
+	}
+
+	&__filter-item {
+		&:not(:last-child) {
+			margin-right: 20px;
+
+			@include mqmax('tablet') {
+				margin-right: 10px;
+			}
+		}
+
+		flex-shrink: 0;
+		width: fit-content;
+	}
+
+	&__list {
+		margin-bottom: 60px;
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+		gap: 30px;
+
+		@include mqmax('phone') {
+			grid-template-columns: repeat(auto-fill, minmax(142px, 49.1%));
+			gap: 5px;
+			row-gap: 10px;
+		}
+	}
+
+	&__link {
+		text-decoration: underline;
+		color: $blueColor;
+		border-radius: 5px;
+		transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s, text-decoration-color 0.3s;
+		padding: 2px 3px;
+
+		&:focus {
+			box-shadow: 0px 0px 0px 2px $orangelight;
+		}
+
+		&:hover {
+			color: $orangeColor;
+			text-decoration-color: transparent;
+		}
+
+		&:active {
+			text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+			box-shadow: 0px 0px 0px 2px transparent;
+			color: $blueColor;
+		}
+	}
+}
