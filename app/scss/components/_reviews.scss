@@ -52,7 +52,7 @@
 		}
 
 		@include mqmax('phone') {
-			max-width: 265px;
+			max-width: 77%;
 			margin-bottom: -25px;
 		}
 	}
@@ -84,8 +84,8 @@
 			left: -40px;
 
 			@include mqmax('phone') {
-				left: -27px;
 				top: -5px;
+				left: -35px;
 			}
 		}
 
@@ -93,6 +93,10 @@
 			background-image: url('../images/reviews/2.svg');
 			right: 0;
 			bottom: 0;
+
+			@include mqmax('phone') {
+				right: -30px;
+			}
 		}
 	}
 

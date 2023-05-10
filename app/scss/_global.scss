@@ -177,3 +177,37 @@ body {
 	flex-wrap: wrap;
 	row-gap: 10px;
 }
+
+.breadcrumbs {
+	background-color: #FAEDED;
+
+	&__list {
+		display: flex;
+		margin-left: -6px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+
+		&:not(:last-child) {
+			&::after {
+				content: '';
+				background-image: url('../images/icon/chevron.svg');
+				background-repeat: no-repeat;
+				background-position: center;
+				width: 6px;
+				height: 10px;
+			}
+		}
+	}
+
+	&__link {
+		font-size: 14px;
+		line-height: 1.2;
+		letter-spacing: 0.03em;
+		color: #505050;
+		padding: 24px 6px;
+		display: block;
+	}
+}

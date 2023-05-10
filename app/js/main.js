@@ -1,6 +1,17 @@
 
 $(function () {
 
+
+	$('.select-style').on('click keypress blur', function (event) {
+		if (event.type === 'click' || (event.type === 'keypress' && event.which === 13)) {
+			$(this).toggleClass('active');
+		} else if (event.type === 'blur') {
+			$(this).removeClass('active');
+		}
+	});
+
+
+
 	$(document).ready(function () {
 		var mySwiper = null;
 
