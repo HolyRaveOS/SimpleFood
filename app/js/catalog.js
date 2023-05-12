@@ -67,4 +67,29 @@ $(document).ready(function () {
 		});
 	});
 
+
+
+
+	$(document).ready(function () {
+		$('.header__search-form, .header__cart').hide();
+		$('.header__user-btn-cart').click(function () {
+			$('.header__search-form').slideUp('fast');
+			$('.header__cart').slideToggle('fast');
+		});
+		$('.header__search-form').css('display', 'flex').hide();
+		$('.header__user-btn').click(function () {
+			$('.header__cart').slideUp('fast');
+			$('.header__search-form').slideToggle('fast');
+		});
+
+		$(document).on('click', function (event) {
+			if (!$(event.target).closest('.header__user-btn, .header__search-form, .header__user-btn-cart, .header__cart').length) {
+				$('.header__search-form, .header__cart').slideUp('fast');
+			}
+		});
+	});
+
+
+
+
 });

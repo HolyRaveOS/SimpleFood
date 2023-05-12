@@ -45,6 +45,21 @@ function scripts() {
 		.pipe(browserSync.stream())
 }
 
+
+
+function scripts2() {
+	return src([
+		'node_modules/jquery/dist/jquery.js',
+		'node_modules/nouislider/dist/nouislider.min.js',
+		'node_modules/swiper/swiper-bundle.min.js',
+		'app/js/catalog.js'
+	])
+		.pipe(concat('catalog.min.js'))
+		.pipe(uglify())
+		.pipe(dest('app/js/'))
+		.pipe(browserSync.stream())
+}
+
 const htmlInclude = () => {
 	return src(['app/html/*.html'])
 		.pipe(fileInclude({
@@ -101,4 +116,4 @@ exports.cleanDist = cleanDist;
 exports.htmlInclude = htmlInclude;
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(htmlInclude, styles, scripts, browsersync, watching);
+exports.default = parallel(htmlInclude, styles, scripts, scripts2, browsersync, watching);
