@@ -1,0 +1,411 @@
+.catalog {
+	padding-top: 60px;
+
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		padding-bottom: 60px;
+		flex-wrap: wrap;
+
+		@include mqmax('tablet') {
+			padding-bottom: 30px;
+			flex-direction: column;
+			gap: 20px;
+		}
+	}
+
+	&__title {
+		@include mqmax('tablet') {
+			font-size: 24px;
+		}
+	}
+
+	&__inner {
+		display: flex;
+	}
+
+	&__filters {
+		margin-right: 30px;
+
+		@include mqmax('tablet-3') {
+			position: fixed;
+			top: 0;
+			left: -100%;
+			height: 100%;
+			width: 80%;
+			background-color: #fff;
+			flex-direction: column;
+			z-index: 4;
+			transition: left 0.3s;
+			align-items: start;
+			justify-content: start;
+			overflow-y: auto;
+			overflow-x: hidden;
+			padding-top: 80px;
+			z-index: 100;
+		}
+
+		&.open-filter {
+			left: 0;
+		}
+
+		&::after {
+			content: '';
+			position: fixed;
+			right: 0;
+			left: 100%;
+			top: 0;
+			min-width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			transition: left 0.3s;
+		}
+
+		&.open-filter::after {
+			left: 80%;
+		}
+	}
+
+	&__item {
+		max-width: 271px;
+		width: 100%;
+
+		&:not(:last-child) {
+			margin-bottom: 30px;
+		}
+
+		border-radius: 5px;
+		border: 1px solid $silver-200;
+		padding: 0 15px;
+	}
+
+	&__filters-title {
+		padding: 15px 0;
+		font-size: 24px;
+		line-height: 1.2;
+		letter-spacing: 0.03em;
+		color: $blueColor;
+		position: relative;
+
+		&::after {
+			content: '';
+			height: 1px;
+			width: 113%;
+			background-color: $silver-200;
+			position: absolute;
+			bottom: 0;
+			left: -15px;
+		}
+	}
+
+	&__content {
+		width: 100%;
+		min-height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
+	&__content-list {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+		gap: 10px;
+		margin-bottom: 60px;
+
+		@include mqmax('phone') {
+			grid-template-columns: repeat(auto-fill, minmax(142px, 49.1%));
+			gap: 5px;
+			row-gap: 10px;
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.selects-catalog {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+
+	.filter-btn {
+		order: -1;
+	}
+
+	&__form {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		flex-wrap: wrap;
+	}
+
+	&__container {
+		position: relative;
+	}
+
+	&__icon {
+		position: absolute;
+		right: 15px;
+		top: 15px;
+		pointer-events: none;
+		fill: $grayColor;
+	}
+}
+
+.select-style {
+	background-color: #FFFFFF;
+	border: 1px solid $grayColor;
+	border-radius: 3px;
+	padding: 15px 40px 15px 15px;
+	font-size: 14px;
+	line-height: 1.2;
+	letter-spacing: 0.03em;
+	appearance: none;
+	transition: border-color 0.3s, color 0.3s;
+
+	&:hover {
+		color: $orangeColor;
+		border-color: $orangeColor;
+
+		&+.selects-catalog__icon {
+			fill: $orangeColor;
+		}
+	}
+
+	&:focus {
+		border-color: $orangeColor;
+	}
+
+	&.active {
+		&:hover {
+			color: $darkColor;
+			border-color: $grayColor;
+
+			&+.selects-catalog__icon {
+				fill: $grayColor;
+			}
+		}
+
+		&:focus {
+			border-color: $grayColor;
+		}
+	}
+}
+
+.filter-categoty {
+	&__list-item {
+		&:not(:last-child) {
+			margin-bottom: 12px;
+
+			@include mqmax('tablet-3') {
+				margin-bottom: 0px;
+			}
+		}
+	}
+
+	&__list-link {
+		border-radius: 3px;
+		transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s, background-color 0.3s;
+
+		@include mqmax('tablet-3') {
+			padding: 6px 0;
+			display: block;
+		}
+
+		&:hover {
+			color: $orangeColor;
+		}
+
+		&:focus {
+			box-shadow: 0px 0px 0px 2px $orangeColor;
+			color: $darkColor;
+		}
+
+		&:active {
+			text-shadow: 2px 2px 5px rgba(54, 56, 83, 0.5);
+
+			@include mqmax('tablet-3') {
+				text-shadow: none;
+				background-color: rgba(255, 122, 80, 0.2);
+			}
+		}
+	}
+}
+
+.filter-box {
+	padding: 25px 0;
+	font-size: 18px;
+	line-height: 1.3;
+	letter-spacing: 0.03em;
+	color: $darkColor;
+}
+
+.filter-proposal {
+	&__label {
+		display: flex;
+		cursor: pointer;
+
+		&:not(:last-child) {
+			margin-bottom: 12px;
+
+			@include mqmax('tablet-3') {
+				margin-bottom: 0px;
+			}
+		}
+
+		@include mqmax('tablet-3') {
+			padding: 6px 0;
+		}
+
+		&:hover {
+			.filter-proposal__checkbox {
+				border-color: $orangeColor;
+			}
+
+			.filter-proposal__text {
+				color: $orangeColor;
+			}
+		}
+	}
+
+	&__input {
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		position: absolute;
+
+		&:focus+.filter-proposal__checkbox {
+			border-color: $orangeColor;
+		}
+
+		&:checked+.filter-proposal__checkbox {
+			border-color: $blueColor;
+		}
+
+		&:checked+.filter-proposal__checkbox::before {
+			content: '';
+			background-image: url('../images/icon/checkvector.svg');
+			background-repeat: no-repeat;
+			background-position: center;
+			width: 12px;
+			height: 9px;
+			margin-left: 5px;
+		}
+	}
+
+	&__checkbox {
+		display: flex;
+		align-items: center;
+		width: 24px;
+		height: 24px;
+		background-color: rgba(255, 104, 56, 0.2);
+		margin-right: 12px;
+		border-radius: 3px;
+		border: 1px solid $silver-200;
+		cursor: pointer;
+		transition: border-color 0.3s;
+
+		&:focus {
+			border-color: $orangeColor;
+		}
+	}
+
+	&__text {
+		transition: color 0.3s;
+	}
+}
+
+.filter-price {
+
+	&__inputs {
+		display: flex;
+	}
+
+	&__label {
+		display: flex;
+		align-items: center;
+
+		&:not(:last-child) {
+			margin-right: 12px;
+		}
+	}
+
+	&__text,
+	.currency {
+		font-size: 16px;
+		line-height: 1.2;
+		letter-spacing: 0.03em;
+		color: $grayColor;
+	}
+
+	&__input {
+		background-color: #FAEDED;
+		border: 1px solid rgba(255, 104, 56, 0.1);
+		border-radius: 3px;
+		width: 70px;
+		height: 40px;
+		text-align: center;
+		margin: 0 5px;
+		font-size: 16px;
+		line-height: 1;
+		letter-spacing: 0.03em;
+		color: $darkColor;
+
+		&:focus {
+			border-color: $orangeColor;
+		}
+	}
+}
+
+.noUi-target {
+	background: transparent;
+	border-radius: 0;
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.noUi-horizontal {
+	height: auto;
+	max-width: 240px;
+	width: 100%;
+}
+
+
+.noUi-connects {
+	background-color: $grayColor;
+	margin-top: 32px;
+	margin-bottom: 5px;
+}
+
+.noUi-connect {
+	min-height: 100%;
+	height: 2px;
+	position: relative;
+	background-color: $orangeColor;
+}
+
+.noUi-horizontal .noUi-handle {
+	width: 18px;
+	height: 18px;
+	top: -8px;
+	margin-right: 10px;
+}
+
+.noUi-handle {
+	border: none;
+	border-radius: 50%;
+	background-color: $orangeColor;
+	cursor: pointer;
+	-webkit-box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb;
+	box-shadow: none;
+
+	&::before,
+	&:after {
+		content: '';
+		width: 44px;
+		height: 44px;
+		background-color: transparent;
+		top: -13px;
+		left: -13px;
+	}
+}

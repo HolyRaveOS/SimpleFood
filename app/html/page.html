@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+@include('htmlcomponents/_head.html',{
+"title":"SimpleFood доставка по простому | Головна сторінка"
+})
+
+<body>
+	<div class="wrapper">
+		@include('htmlcomponents/_header.html')
+
+		<main class="main">
+			<div class="breadcrumbs">
+				<div class="container">
+					<ul class="breadcrumbs__list">
+						<li class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="./index.html">
+								Головна
+							</a>
+						</li>
+						<li class="breadcrumbs__item">
+							<a class="breadcrumbs__link" href="./catalog.html">
+								Каталог продуктів
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</main>
+		@include('htmlcomponents/_footer.html')
+
+	</div>
+	<script src="js/main.min.js"></script>
+</body>
+
+</html>

@@ -2,15 +2,6 @@
 $(function () {
 
 
-	$('.select-style').on('click keypress blur', function (event) {
-		if (event.type === 'click' || (event.type === 'keypress' && event.which === 13)) {
-			$(this).toggleClass('active');
-		} else if (event.type === 'blur') {
-			$(this).removeClass('active');
-		}
-	});
-
-
 
 	$(document).ready(function () {
 		var mySwiper = null;
@@ -49,7 +40,7 @@ $(function () {
 
 	$(document).ready(function () {
 		$('.burger-open,.close-btn,.menu__list a').click(function (event) {
-			$('.close-btn,.close-btn__icon,.mobile-menu').toggleClass('active')
+			$('.mobile-menu,.close-btn').toggleClass('active')
 			$('body').toggleClass('lock');
 			event.stopPropagation();
 		});
@@ -107,6 +98,7 @@ $(function () {
 	});
 
 
+
 	$(document).ready(function () {
 		$('.header__search-form, .header__cart').hide();
 		$('.header__user-btn-cart').click(function () {
@@ -127,7 +119,6 @@ $(function () {
 	});
 
 
-
 	$(document).ready(function () {
 		const swiper3 = new Swiper('.reviews__content', {
 			loop: true,
@@ -146,7 +137,6 @@ $(function () {
 			},
 		});
 	});
-
 
 	var mixer = mixitup('.popular__list');
 

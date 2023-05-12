@@ -1,6 +1,7 @@
 @import 'fonts';
 @import 'reset';
 @import '../../node_modules/swiper/swiper-bundle';
+@import '../../node_modules/nouislider/dist/nouislider';
 @import 'vars';
 
 
@@ -19,78 +20,5 @@
 @import 'components/restaurants-card';
 @import 'components/restaurants';
 @import 'components/reviews';
-
-
-// .catalog {
-// 	padding-top: 60px;
-
-// 	&__top {
-// 		display: flex;
-// 		justify-content: space-between;
-// 	}
-
-// 	&__filter-selects {}
-// }
-
-// .selects-filter {
-
-// 	&__form {
-// 		display: flex;
-// 		align-items: center;
-// 		gap: 20px;
-// 	}
-
-// 	&__container {
-// 		position: relative;
-// 	}
-
-// 	&__icon {
-// 		position: absolute;
-// 		right: 15px;
-// 		top: 15px;
-// 		pointer-events: none;
-// 		fill: $grayColor;
-// 	}
-// }
-
-// .select-style {
-// 	background-color: #FFFFFF;
-// 	border: 1px solid $grayColor;
-// 	border-radius: 3px;
-// 	padding: 15px 40px 15px 15px;
-// 	font-size: 14px;
-// 	line-height: 1.2;
-// 	letter-spacing: 0.03em;
-// 	appearance: none;
-// 	transition: border-color 0.3s, color 0.3s;
-
-// 	&:hover {
-// 		color: $orangeColor;
-// 		border-color: $orangeColor;
-
-// 		&+.selects-filter__icon {
-// 			fill: $orangeColor;
-// 		}
-
-// 	}
-
-// 	&:focus {
-// 		border-color: $orangeColor;
-// 	}
-
-// 	&.active {
-// 		&:hover {
-// 			color: $darkColor;
-// 			border-color: $grayColor;
-
-// 			&+.selects-filter__icon {
-// 				fill: $grayColor;
-// 			}
-
-// 		}
-
-// 		&:focus {
-// 			border-color: $grayColor;
-// 		}
-// 	}
-// }
+@import 'components/catalog-section';
+@import 'components/discounts';

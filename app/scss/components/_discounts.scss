@@ -1,0 +1,104 @@
+.discounts {
+	&__title {
+		margin-bottom: 60px;
+
+		@include mqmax('desktop') {
+			text-align: center;
+		}
+
+		@include mqmax('tablet') {
+			margin-bottom: 40px;
+		}
+	}
+
+	&__wrapper {
+		overflow: visible;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+		justify-content: space-evenly;
+
+		@include mqmax('tablet-2') {
+			gap: 10px;
+			row-gap: 40px;
+		}
+
+		@include mqmax('tablet') {
+			flex-wrap: nowrap;
+			justify-content: start;
+			gap: 0;
+		}
+	}
+
+	&__item {
+		height: auto;
+
+		@include mqmax('tablet') {
+			margin-bottom: 45px;
+		}
+	}
+
+	.restaurants-card {
+		&__title {
+			padding: 15px 20px;
+			margin-bottom: 0;
+		}
+	}
+
+	&__pagination {
+		margin: 0 auto;
+
+		.swiper-pagination-bullet {
+			width: 15px;
+			height: 15px;
+			background-color: $grayColor;
+			transition: background-color 0.3s, box-shadow 0.3s;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			@include mqmax('tablet-2') {
+				&::after {
+					content: '';
+					width: 30px;
+					height: 44px;
+					position: absolute;
+				}
+			}
+
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+
+			&:focus {
+				box-shadow: 0px 0px 0px 2px $orangeColor;
+				background-color: $grayColor;
+			}
+
+			&:hover {
+				background-color: #FFF2ED;
+				box-shadow: 0px 0px 0px 2px rgba(255, 104, 56, 0.5);
+			}
+
+			&:active {
+				background-color: rgba(255, 104, 56, 0.5);
+			}
+		}
+
+		.swiper-pagination-bullet-active {
+			background-color: $orangeColor;
+		}
+	}
+
+	.swiper-pagination-bullet,
+	.swiper-pagination-clickable {
+		display: none;
+
+		@include mqmax('tablet') {
+			display: flex;
+		}
+	}
+}
