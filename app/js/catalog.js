@@ -45,6 +45,35 @@ $(document).ready(function () {
 
 
 
+
+	$(document).ready(function () {
+		$('.burger-open,.close-btn,.menu__list a').click(function (event) {
+			$('.mobile-menu,.close-btn').toggleClass('active')
+			$('body').toggleClass('lock');
+			event.stopPropagation();
+		});
+
+		$(document).click(function (event) {
+			var container = $(".mobile-menu");
+			if (!container.is(event.target) && container.has(event.target).length === 0) {
+				container.removeClass('active');
+				$('body').removeClass('lock');
+			}
+			var screenWidth = $(window).width();
+			var rightOffset = screenWidth - (screenWidth * 0.21);
+			if (event.pageX > rightOffset) {
+				container.removeClass('active');
+				$('body').removeClass('lock');
+			}
+		});
+	});
+
+
+
+
+
+
+
 	$(document).ready(function () {
 		$('.filter-btn,.filter-close').click(function (event) {
 			$('.filter-btn,.filter-close,.catalog__filters').toggleClass('open-filter');
@@ -88,8 +117,6 @@ $(document).ready(function () {
 			}
 		});
 	});
-
-
 
 
 });
